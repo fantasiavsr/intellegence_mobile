@@ -68,7 +68,7 @@ def main():
     #student_code_path = 'public/flutter_application_1/lib/main2.dart'
     #kunci_jawaban_path = 'public/flutter_application_1/lib/main.dart'
 
-    student_code_path = 'flutter_application_1/lib/main2.dart'
+    student_code_path = 'flutter_application_1/lib/main.dart'
     kunci_jawaban_path = 'flutter_application_1/lib/main.dart'
 
     evaluation_result = evaluate_flutter_code(student_code_path, kunci_jawaban_path)
