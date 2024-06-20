@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('analyzes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('test_id');
+            $table->unsignedBigInteger('test_id')->nullable();
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('answer_id');
             $table->Integer('analyze_returncode');
@@ -24,6 +24,8 @@ return new class extends Migration
             $table->Integer('analyze_penalty');
             $table->unsignedBigInteger('diffenreces_id')->nullable();
             $table->Integer('differences_penalty');
+            $table->text('missing_keyword');
+            $table->Intenger('keyword_penalty');
             $table->Integer('total_penalty');
             $table->Integer('score');
             $table->timestamps();

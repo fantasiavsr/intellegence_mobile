@@ -87,13 +87,19 @@
                                             </div>
 
                                             <div class="col-sm form-outline mb-4">
+
                                                 <label class="form-label">Key Answer<span>
-                                                        <p class="text-white" style="font-size: 12px">*Required</p>
+                                                        <p class="text-grey" style="font-size: 12px">*exact flutter code</p>
                                                     </span></label>
                                                 <textarea name="key_answer" class="form-control" rows="10" autofocus></textarea>
+
+                                                <label class="form-label pt-3">Key Word<span>
+                                                        <p class="text-grey" style="font-size: 12px">*seperate key word with comma</p>
+                                                    </span></label>
+                                                <input type="text" name="key_word" class="form-control" autofocus
+                                                    required>
+
                                             </div>
-
-
 
                                         </div>
 

@@ -23,7 +23,7 @@
 
                     {{-- Sub Title --}}
                     <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
-                        <h1 class="h3 text-gray-800 ">List Item</h1>
+                        <h1 class="h3 text-gray-800 ">Question List</h1>
                         <a class="" href="{{ route('teacher.debug.add_question') }}">
                             <button class="btn btn-primary btn-icon-split">
                                 <span class="icon text-white-50">
@@ -48,7 +48,8 @@
                                                     <th>ID</th>
                                                     <th>Test ID</th>
                                                     <th>Question</th>
-                                                    <th>Key</th>
+                                                    <th>Code Path</th>
+                                                    <th>Key Word</th>
                                                     <th>Date</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
@@ -76,7 +77,10 @@
                                                         <td>
                                                             {{-- {{ $item->key_answer }} --}}
                                                             {{-- dont show than 50 char = .... --}}
-                                                            {{ strlen($item->key_answer) > 50 ? substr($item->key_answer, 0, 50) . '...' : $item->key_answer }}
+                                                            {{ strlen($item->code_path) > 50 ? substr($item->code_path, 0, 50) . '...' : $item->code_path }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->key_word }}
                                                         </td>
                                                         <td>
                                                             {{ $item->created_at }}

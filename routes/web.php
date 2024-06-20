@@ -49,3 +49,6 @@ Route::delete('/pages/teacher/debug/add_question/{id}', [Controller::class, 'tea
 /* answer question */
 Route::get('/pages/teacher/debug/answer_question', [Controller::class, 'teacher_answer_question'])->name('teacher.debug.answer_question')->middleware('checkUserLevel:teacher');
 Route::get('/pages/teacher/debug/fill_question/{id}', [Controller::class, 'teacher_fill_question'])->name('teacher.debug.fill_question')->middleware('checkUserLevel:teacher');
+Route::post('/pages/teacher/debug/add_answer', [Controller::class, 'teacher_store_answer'])->name('teacher.debug.add_answer.store')->middleware('checkUserLevel:teacher');
+/* evaluation */
+Route::get('/pages/teacher/debug/evaluations', [Controller::class, 'teacher_evaluations'])->name('teacher.debug.evaluation')->middleware('checkUserLevel:teacher');

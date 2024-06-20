@@ -59,11 +59,11 @@
                                         </div>
                                     @endif
 
-                                    <form action="" method="POST">
+                                    <form action="{{ route('teacher.debug.add_answer.store') }}" method="POST">
                                         @csrf
                                         {{-- {{ $this_item->id }} --}}
                                         {{-- <input type="hidden" name="id" value="{{ $this_item->id }}"> --}}
-
+                                        <input type="hidden" name="question_id" value="{{ $question->id }}">
                                         <div class="row d-flex">
 
                                             <div class="col-sm form-outline mb-4">
@@ -78,7 +78,7 @@
                                         <!-- Submit button -->
                                         <div class="row">
                                             <div class="col">
-                                                <a href=""
+                                                <a href="{{ route('teacher.debug.answer_question') }}"
                                                     class="btn btn-lg mt-2 px-5 mb-4"
                                                     style="background-color: #F9FAFC; width:100%">Cancel</a>
                                             </div>

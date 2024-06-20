@@ -23,7 +23,7 @@
 
                     {{-- Sub Title --}}
                     <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
-                        <h1 class="h3 text-gray-800 ">Answer List</h1>
+                        <h1 class="h3 text-gray-800 ">Evaluation List</h1>
                         {{-- <a class="" href="{{ route('teacher.debug.add_question') }}">
                             <button class="btn btn-primary btn-icon-split">
                                 <span class="icon text-white-50">
@@ -47,9 +47,13 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Test ID</th>
-                                                    <th>Question</th>
-                                                    <th>status</th>
-                                                    <th>Answer</th>
+                                                    <th>Question ID</th>
+                                                    <th>Answer ID</th>
+                                                    <th>Error Count</th>
+                                                    <th>Error Penalty</th>
+                                                    <th>Diff Penalty</th>
+                                                    <th>Total Penalty</th>
+                                                    <th>Score</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -69,26 +73,32 @@
                                                             {{ $item->test_id }}
                                                         </td>
                                                         <td>
-                                                            {{ $item->question }}
+                                                            {{ $item->question_id }}
                                                         </td>
                                                         <td>
-                                                            {{-- check if this question already answerred --}}
-                                                            @php
-                                                                $status = $answered->where('question_id', $item->id)->count();
-                                                                if ($status > 0) {
-                                                                    echo '<span class="badge badge-success">Answered</span>';
-                                                                } else {
-                                                                    echo '<span class="badge badge-danger">Not Answered</span>';
-                                                                }
-                                                            @endphp
+                                                            {{ $item->answer_id }}
                                                         </td>
                                                         <td>
-                                                            <a href="{{ route('teacher.debug.fill_question', ['id' => $item->id]) }}"
-                                                                class="btn btn-sm btn-warning pr-5 pl-1">
-                                                                Answer
+                                                            {{ $item->analyze_error_count }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->analyze_penalty }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->differences_penalty }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->analyze_total_penalty }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->score }}
+                                                        </td>
+                                                        <td>
+                                                            <a href=""
+                                                                class="btn btn-sm btn-primary pr-5 pl-1">
+                                                                Detail
                                                             </a>
                                                         </td>
-
                                                     </tr>
                                                 @endforeach
                                             </tbody>

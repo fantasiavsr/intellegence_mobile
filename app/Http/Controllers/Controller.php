@@ -60,6 +60,8 @@ class Controller extends BaseController
             'test_id' => 'required',
             'question' => 'required',
             'key_answer' => 'nullable',
+            'code_path' => 'nullable',
+            'key_word' => 'nullable',
         ]);
 
         /* dd ($data); */
@@ -77,9 +79,10 @@ class Controller extends BaseController
         $keyAnswer = request()->input('key_answer'); // Mendapatkan nilai teks mentah dari input
         file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file
 
-
-        /* Ganti key_answer pada question yang barusan dibuat menjadi nama file */
-        $flight->key_answer = $fileName;
+        $flight->key_answer = $data['key_answer'];
+        $flight->code_path = $fileName;
+        $flight->key_word = $data['key_word'];
+        //dd($flight);
         $flight->save();
 
         return redirect()->route('teacher.debug.input_question');
@@ -103,14 +106,19 @@ class Controller extends BaseController
         $test = \App\Models\Test::where('id', '1')->first();
         $questions = \App\Models\Question::where('test_id', $test->id)->get();
 
+        /* check if question answered for this user */
+        $answered = \App\Models\Answer::where('user_id', $user->id)->get();
+
         return view('pages.teacher.debug.answer_question', [
             'title' => "Answer Question",
             'user' => $user,
             'list_item' => $questions,
+            'answered' => $answered,
         ]);
     }
 
-    public function teacher_fill_question($id){
+    public function teacher_fill_question($id)
+    {
         $user = Auth::user();
         $question = \App\Models\Question::where('id', $id)->first();
         //dd($question);
@@ -122,17 +130,47 @@ class Controller extends BaseController
         ]);
     }
 
-    public function teacher_store_answer(){
+    public function teacher_store_answer()
+    {
+        $user = Auth::user();
+
         $data = request()->validate([
             'question_id' => 'required',
             'answer' => 'required',
+            'code_path' => 'nullable',
         ]);
 
-        dd($data);
+        // dd($data);
 
         $flight = new \App\Models\Answer();
         $flight->question_id = $data['question_id'];
+        $flight->user_id = $user->id;
         $flight->answer = $data['answer'];
+
+        $question = \App\Models\Question::where('id', $data['question_id'])->first();
+        $test_id = $question->test_id;
+
+        $flight->test_id = $test_id;
+
+        // Membuat nama file yang unik
+        $fileName = 'answer_' . $flight->id . '_' . now()->format('Ymd_His') . '.dart';
+        // Menyimpan teks ke dalam file
+        $filePath = public_path('flutter_application_1/lib/' . $fileName);
+        $keyAnswer = request()->input('answer'); // Mendapatkan nilai teks mentah dari input
+        file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file
+        $flight->code_path = $fileName;
+
+        //dd($flight);
+
+        /* udpate if this user already answered */
+        $answered = \App\Models\Answer::where('user_id', $user->id)->where('question_id', $data['question_id'])->first();
+        if ($answered) {
+            $answered->answer = $data['answer'];
+            $answered->code_path = $fileName;
+            $answered->save();
+            return redirect()->route('teacher.debug.answer_question');
+        }
+
         $flight->save();
 
         return redirect()->route('teacher.debug.answer_question');
