@@ -18,13 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('answer_id');
             $table->Integer('analyze_returncode');
-            $table->String('analyze_stdout');
+            $table->Text('analyze_stdout');
             $table->String('analyze_stderr');
             $table->Integer('analyze_error_count');
             $table->Integer('analyze_penalty');
             $table->unsignedBigInteger('diffenreces_id')->nullable();
             $table->Integer('differences_penalty');
-            $table->text('missing_keyword');
+            $table->Text('missing_keyword');
             $table->Intenger('keyword_penalty');
             $table->Integer('total_penalty');
             $table->Integer('score');

@@ -52,12 +52,14 @@
                                                     <th>Error Count</th>
                                                     <th>Error Penalty</th>
                                                     <th>Diff Penalty</th>
+                                                    <th>Missing Keyword</th>
+                                                    <th>Word Penalty</th>
                                                     <th>Total Penalty</th>
                                                     <th>Score</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($list_item as $item)
+                                                @foreach ($evaluations as $item)
                                                     <tr class="">
                                                         {{-- <td>
                                                             <img class="avatar rounded-circle me-2"
@@ -88,7 +90,13 @@
                                                             {{ $item->differences_penalty }}
                                                         </td>
                                                         <td>
-                                                            {{ $item->analyze_total_penalty }}
+                                                            {{ $item->missing_keywords }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->keyword_penalty }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->total_penalty }}
                                                         </td>
                                                         <td>
                                                             {{ $item->score }}

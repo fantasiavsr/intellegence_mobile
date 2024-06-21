@@ -72,12 +72,20 @@ class Controller extends BaseController
         $flight->save();
 
         // Membuat nama file yang unik
-        $fileName = 'question_' . $flight->id . '_' . now()->format('Ymd_His') . '.dart';
-        /*  dd($data['key_answer']); */
-        // Menyimpan teks ke dalam file
+        /*  $fileName = 'question_' . $flight->id . '_' . now()->format('Ymd_His') . '.dart';
         $filePath = public_path('flutter_application_1/lib/' . $fileName);
         $keyAnswer = request()->input('key_answer'); // Mendapatkan nilai teks mentah dari input
-        file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file
+        file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file */
+        /* check if key_answer empty, key_answer = 'empty' and dont create file */
+        if ($data['key_answer']) {
+            $fileName = 'question_' . $flight->id . '_' . now()->format('Ymd_His') . '.dart';
+            $filePath = public_path('flutter_application_1/lib/' . $fileName);
+            $keyAnswer = request()->input('key_answer'); // Mendapatkan nilai teks mentah dari input
+            file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file
+        } else {
+            $fileName = 'empty';
+        }
+
 
         $flight->key_answer = $data['key_answer'];
         $flight->code_path = $fileName;
@@ -91,11 +99,18 @@ class Controller extends BaseController
     public function teacher_delete_question(Request $request)
     {
         $question = \App\Models\Question::find($request->id);
-        $question->delete();
+        /* dd($question);  */
+
 
         /* delete juga file key_answer yang ada di public */
-        $filePath = public_path('flutter_application_1/lib/' . $question->key_answer);
-        unlink($filePath);
+        $filePath = public_path('flutter_application_1/lib/' . $question->code_path);
+        /* dd($filePath); */
+
+        /* if FilePath not exist no need unlink */
+        if (file_exists($filePath) && $question->code_path == 'empty') {
+            unlink($filePath);
+        }
+        $question->delete();
 
         return redirect()->route('teacher.debug.input_question');
     }
@@ -112,7 +127,7 @@ class Controller extends BaseController
         return view('pages.teacher.debug.answer_question', [
             'title' => "Answer Question",
             'user' => $user,
-            'list_item' => $questions,
+            'question' => $questions,
             'answered' => $answered,
         ]);
     }
@@ -176,9 +191,150 @@ class Controller extends BaseController
         return redirect()->route('teacher.debug.answer_question');
     }
 
+    public function teacher_evaluation()
+    {
+        $user = Auth::user();
+        $evaluations = \App\Models\Analyze::where('user_id', $user->id)->get();
+
+        return view('pages.teacher.debug.evaluations', [
+            'title' => "Evaluations",
+            'user' => $user,
+            'evaluations' => $evaluations,
+        ]);
+    }
+
+    public function teacher_store_evaluation(Request $request)
+    {
+        /* dd($request); */
+        $user = Auth::user();
+        $evaluations = \App\Models\Analyze::where('user_id', $user->id)->get();
+
+        $question = \App\Models\Question::where('id', $request->question_id)->first();
+        $answer = \App\Models\Answer::where('id', $request->answer_id)->first();
+        /* dd($question, $answer); */
+
+        /* $question_path_code = $question->code_path ?? '';
+        $answer_path_code = $answer->code_path ?? '';
+        $key_word = $question->key_word ?? ''; */
+        if ($question->code_path) {
+            $question_path_code = $question->code_path;
+        } else {
+            $question_path_code = '';
+        }
+
+        if ($answer->code_path) {
+            $answer_path_code = $answer->code_path;
+        } else {
+            $answer_path_code = '';
+        }
+
+        if ($question->key_word) {
+            $key_word = $question->key_word;
+        } else {
+            $key_word = '';
+        }
+
+        /* dd($question_path_code, $answer_path_code, $key_word); */
+
+
+        // Jalankan skrip Python
+        $pythonScriptPath = public_path('python/code2.py');
+        $command = escapeshellcmd("python $pythonScriptPath $question_path_code $answer_path_code \"$key_word\"");
+
+        // Eksekusi skrip Python menggunakan exec
+        exec($command . ' 2>&1', $output, $returnCode);
+
+        // $output berisi hasil eksekusi (output skrip Python)
+        // $returnCode berisi kode keluaran dari skrip Python
+
+        // Mengonsumsi output sebagai JSON
+        $jsonOutput = implode("\n", $output);
+        $outputData = json_decode($jsonOutput, true);
+
+        // Memeriksa apakah penguraian JSON berhasil
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return response()->json([
+                'error' => 'Error decoding JSON: ' . json_last_error_msg(),
+                'output' => $jsonOutput,
+                'return_code' => $returnCode,
+            ]);
+        }
+
+        return response()->json([
+            'output' => $outputData,
+            'return_code' => $returnCode,
+        ]);
+
+        // Mendapatkan nilai dari output JSON
+        $analyze_returncode = $outputData['analyze_returncode'] ?? null;
+        $analyze_stdout = $outputData['analyze_stdout'] ?? null;
+        $analyze_stderr = $outputData['analyze_stderr'] ?? null;
+        $analyze_error_count = $outputData['analyze_error_count'] ?? null;
+        $analyze_penalty = $outputData['analyze_penalty'] ?? null;
+        $differences = $outputData['differences'] ?? null;
+        $differences_total = $outputData['differences_total'] ?? null;
+        $differences_penalty = $outputData['differences_penalty'] ?? null;
+        $missing_keywords = $outputData['missing_keywords'] ?? null;
+        $keyword_penalty = $outputData['keyword_penalty'] ?? null;
+        $total_penalty = $outputData['total_penalty'] ?? null;
+        $score = $outputData['score'] ?? null;
+
+        $flight = new \App\Models\Analyze();
+        $flight->question_id = $request->question_id;
+        $flight->user_id = $user->id;
+        $flight->test_id = $question->test_id;
+        $flight->question_id = $request->question_id;
+        $flight->answer_id = $request->answer_id;
+        $flight->analyze_returncode = $analyze_returncode;
+        $flight->analyze_stdout = $analyze_stdout;
+        $flight->analyze_stderr = $analyze_stderr;
+        $flight->analyze_error_count = $analyze_error_count;
+        $flight->analyze_penalty = $analyze_penalty;
+        $flight->differences_penalty = $differences_penalty;
+        /* convert missing keyword to keyowd1, keyword2,... */
+        /* missing_keywords = implode(", ", $missing_keywords); */
+        /* check if empty */
+        if ($missing_keywords) {
+            $missing_keywords = implode(", ", $missing_keywords);
+        } else {
+            $missing_keywords = '';
+        }
+        /* dd($missing_keywords); */
+        $flight->missing_keywords = $missing_keywords;
+        $flight->keyword_penalty = $keyword_penalty;
+        $flight->total_penalty = $total_penalty;
+        $flight->score = $score;
+        dd($flight);
+
+        /* check if already exist */
+        $exist = \App\Models\Analyze::where('user_id', $user->id)->where('question_id', $request->question_id)->where('answer_id', $request->answer_id)->first();
+        if ($exist) {
+            $exist->analyze_returncode = $analyze_returncode;
+            $exist->analyze_stdout = $analyze_stdout;
+            $exist->analyze_stderr = $analyze_stderr;
+            $exist->analyze_error_count = $analyze_error_count;
+            $exist->analyze_penalty = $analyze_penalty;
+            $exist->differences_penalty = $differences_penalty;
+            $exist->missing_keywords = $missing_keywords;
+            $exist->keyword_penalty = $keyword_penalty;
+            $exist->total_penalty = $total_penalty;
+            $exist->score = $score;
+            $exist->save();
+            return redirect()->route('teacher.debug.evaluation');
+        } else {
+            $flight->save();
+        }
+
+        return view('pages.teacher.debug.evaluations', [
+            'title' => "Evaluations",
+            'user' => $user,
+            'evaluations' => $evaluations,
+        ]);
+    }
+
     public function executePythonScript()
     {
-        $pythonScriptPath = 'python/code2.py';
+        $pythonScriptPath = 'python/code3.py';
         $command = 'python ' . $pythonScriptPath;
 
         // Eksekusi skrip Python menggunakan exec

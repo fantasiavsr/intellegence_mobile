@@ -45,15 +45,17 @@
                                         <table class="table table-hover" id="dataTable">
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
+                                                    <th>Question ID</th>
+                                                    <th>Answer ID</th>
                                                     <th>Test ID</th>
                                                     <th>Question</th>
                                                     <th>status</th>
                                                     <th>Answer</th>
+                                                    <th>Analyze</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($list_item as $item)
+                                                @foreach ($question as $item)
                                                     <tr class="">
                                                         {{-- <td>
                                                             <img class="avatar rounded-circle me-2"
@@ -66,6 +68,12 @@
                                                             {{ $item->id }}
                                                         </td>
                                                         <td>
+                                                            {{-- {{ $item->id }} --}
+                                                            {{-- answer id --}}
+                                                            {{ $answered->where('question_id', $item->id)->pluck('id')->first() }}
+
+                                                        </td>
+                                                        <td>
                                                             {{ $item->test_id }}
                                                         </td>
                                                         <td>
@@ -74,7 +82,9 @@
                                                         <td>
                                                             {{-- check if this question already answerred --}}
                                                             @php
-                                                                $status = $answered->where('question_id', $item->id)->count();
+                                                                $status = $answered
+                                                                    ->where('question_id', $item->id)
+                                                                    ->count();
                                                                 if ($status > 0) {
                                                                     echo '<span class="badge badge-success">Answered</span>';
                                                                 } else {
@@ -88,7 +98,31 @@
                                                                 Answer
                                                             </a>
                                                         </td>
-
+                                                        <td>
+                                                            {{-- <a href=""
+                                                                class="btn btn-sm btn-success pr-5 pl-1">
+                                                                Analyze
+                                                            </a> --}}
+                                                            @if ($status > 0)
+                                                                <form action="{{ route('teacher.debug.evaluation.store') }}" method="POST">
+                                                                    @csrf
+                                                                    <input type="hidden" name="question_id"
+                                                                        value="{{ $item->id }}">
+                                                                    <input type="hidden" name="test_id"
+                                                                        value="{{ $item->test_id }}">
+                                                                    {{-- answer id from this user for this question id --}}
+                                                                    <input type="hidden" name="answer_id"
+                                                                        value="{{ $answered->where('question_id', $item->id)->pluck('id')->first() }}">
+                                                                    <button type="submit"
+                                                                        class="btn btn-sm btn-primary pr-5 pl-1"> Analyze
+                                                                    </button>
+                                                                </form>
+                                                            @else
+                                                                <a href="" class="btn btn-sm btn-secondary pr-5 pl-1 disabled">
+                                                                    Analyze
+                                                                </a>
+                                                            @endif
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>

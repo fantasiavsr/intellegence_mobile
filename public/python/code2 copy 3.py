@@ -1,8 +1,9 @@
-import sys
-import json
 import subprocess
-import os
 import difflib
+import json
+import os
+import sys
+import string
 
 def run_dart_analyze(flutter_code_path):
     try:
@@ -21,12 +22,15 @@ def run_dart_analyze(flutter_code_path):
         return -1, str(e), str(e), 0
 
 def clean_line(line):
+    """Fungsi untuk membersihkan baris dari komentar setelah // dan spasi tambahan."""
     cleaned_line = line.split('//')[0].strip()  # Mengambil bagian sebelum //
     return cleaned_line
 
 def is_significant_change(code):
-    if not code:
+    """Fungsi untuk menentukan apakah perubahan kode signifikan (bukan hanya tanda baca atau string kosong)."""
+    if not code:  # Jika kode kosong
         return False
+    # jika diawali // maka tidak signifikan
     if code.startswith('//'):
         return False
     if code.startswith('{') and code.endswith('}'):
@@ -37,6 +41,7 @@ def is_significant_change(code):
         return False
     if code.startswith('(') and code.endswith(')'):
         return False
+    # Jika semua karakter dalam kode adalah tanda baca yang ditentukan, maka tidak signifikan
     if all(char in '{[;,]}\'"' for char in code):
         return False
     return True
@@ -56,15 +61,19 @@ def compare_code(student_code_path, kunci_jawaban_path):
         if line.startswith('? '):  # Karakter ? menunjukkan perbedaan yang tidak dapat dihitung
             error_count += 1
 
+    # Menyiapkan list untuk menyimpan perbedaan antara kode siswa dan kunci jawaban
     differences = []
     for line in diff:
         if line.startswith('- ') or line.startswith('+ '):
+            # Menyimpan nomor baris dan jenis perubahan
             kode = "code 1" if line.startswith('- ') else "code 2"
             if is_significant_change(line[2:].strip()):
                 differences.append({kode: line[2:].strip()})
                 error_count += 1
 
     return {'error_count': error_count, 'differences': differences}
+
+
 
 def check_keywords(student_code_path, keywords):
     with open(student_code_path, 'r') as student_file:
@@ -76,23 +85,28 @@ def check_keywords(student_code_path, keywords):
 def evaluate_flutter_code(student_code_path, kunci_jawaban_path, keywords):
     analyze_returncode, analyze_stdout, analyze_stderr, analyze_error_count = run_dart_analyze(student_code_path)
 
-    if os.path.exists(kunci_jawaban_path) and kunci_jawaban_path:
+    # Cek keberadaan file kunci jawaban
+    if os.path.exists(kunci_jawaban_path):
+        # Membandingkan kode siswa dengan kunci jawaban
         differences_result = compare_code(student_code_path, kunci_jawaban_path)
     else:
+        print(f"File kunci jawaban '{kunci_jawaban_path}' tidak ditemukan.")
         differences_result = {'error_count': 0, 'differences': []}
 
-    analyze_penalty = min(analyze_error_count * 3, 30)
-    differences_penalty = min(differences_result['error_count'] * 2, 20)
+    # Menghitung penalti berdasarkan analisis dan perbedaan
+    analyze_penalty = min(analyze_error_count * 3, 30)  # Penalti maksimal 100%
+    differences_penalty = min(differences_result['error_count'] * 2, 20)  # Penalti maksimal 100%
 
+    # Memeriksa kata kunci
     keyword_penalty = 0
-    missing_keywords = []
     if keywords:
         missing_keyword_count, missing_keywords = check_keywords(student_code_path, keywords)
-        keyword_penalty = min(missing_keyword_count * 5, 50)
+        keyword_penalty = min(missing_keyword_count * 5, 50)  # Penalti maksimal 100%
 
-    total_penalty = min(analyze_penalty + differences_penalty + keyword_penalty, 100)
-    score = max(100 - total_penalty, 0)
+    total_penalty = min(analyze_penalty + differences_penalty + keyword_penalty, 100)  # Penalti total maksimal 100%
+    score = max(100 - total_penalty, 0)  # Skor minimum adalah 0
 
+    # Mengembalikan hasil penilaian dalam bentuk objek JSON
     result = {
         'analyze_returncode': analyze_returncode,
         'analyze_stdout': analyze_stdout,
@@ -102,7 +116,7 @@ def evaluate_flutter_code(student_code_path, kunci_jawaban_path, keywords):
         'differences': differences_result['differences'],
         'differences_total': differences_result['error_count'],
         'differences_penalty': differences_penalty,
-        'missing_keywords': missing_keywords,
+        'missing_keywords': missing_keywords if keywords else [],
         'keyword_penalty': keyword_penalty,
         'total_penalty': total_penalty,
         'score': score,
@@ -110,11 +124,11 @@ def evaluate_flutter_code(student_code_path, kunci_jawaban_path, keywords):
         'kunci_jawaban_path': kunci_jawaban_path,
     }
 
-    return result
+    return json.dumps(result, indent=2)
 
 def main():
     if len(sys.argv) != 4:
-        print(json.dumps({"error": "Usage: python code2.py <student_code_path> <kunci_jawaban_path> <keywords>"}))
+        print("Usage: python code2.py <student_code_path> <kunci_jawaban_path> <keywords>")
         sys.exit(1)
 
     student_code_path = 'flutter_application_1/lib/' + sys.argv[2]
@@ -124,7 +138,6 @@ def main():
 
     evaluation_result = evaluate_flutter_code(student_code_path, kunci_jawaban_path, keywords)
 
-    print(json.dumps(evaluation_result))
-
+    print(evaluation_result)
 if __name__ == '__main__':
     main()

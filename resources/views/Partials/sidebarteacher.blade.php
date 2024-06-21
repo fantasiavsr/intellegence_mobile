@@ -97,7 +97,7 @@
 
     <!-- Nav Item  -->
     <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
-        <a class="nav-link " href=""
+        <a class="nav-link " href="{{ route('teacher.debug.evaluation') }}"
             @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
             <i class="fas fa-fw fa-user"></i>
             <span>Evaluations</span>
