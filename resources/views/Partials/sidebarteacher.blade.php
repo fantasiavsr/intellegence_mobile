@@ -3,11 +3,11 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ 'user' }}">
         <div class="sidebar-brand-icon pt-3">
             {{-- <i class="fas fa-laugh-wink"></i> --}}
-            {{-- <img class="img" src="{{ asset('img/gv-text-dark.png') }}" alt="" style="width: 83%"> --}}
+            <img class="img" src="{{ asset('img/Untitled    .png') }}" alt="" style="width: 83%">
             {{-- Intelligance Guidance Brand --}}
-            <h4 class="pt-3">
-                <span style="color: #4FBEAB">Intelligance</span> <span style="color: #4FBEAB">Guidance</span>
-            </h4>
+            {{-- <h5 class="pt-3 ">
+                <span style="color: #30445C">Intelligance</span> <span style="color: #30445C">Guidance</span>
+            </h5> --}}
         </div>
         {{-- <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div> --}}
     </a>
@@ -32,9 +32,9 @@
     </div>
 
     <!-- Nav Item  -->
-    <li class="nav-item {{ (request()->is('/pages/teacher/tests')) ? 'active' : '' }}">
+    <li class="nav-item {{ (request()->is('pages/teacher/tests*')) ? 'active' : '' }}">
         <a class="nav-link " href="{{ route('teacher.tests') }}"
-            @if ($title === 'Test') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
+            @if ($title === 'Test' || request()->is('pages/teacher/test*')) style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
             <i class="fas fa-fw fa-folder"></i>
             <span>Test List</span>
         </a>
@@ -55,9 +55,9 @@
     </div>
 
     <!-- Nav Item - Item -->
-    <li class="nav-item {{ (request()->is('pages/teacher/classroom')) ? 'active' : '' }}">
+    <li class="nav-item {{ (request()->is('pages/teacher/classroom*')) ? 'active' : '' }}">
         <a class="nav-link " href="{{ route('teacher.classroom') }}"
-            @if ($title === 'Classroom') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
+            @if ($title === 'Classroom'|| request()->is('pages/teacher/classroom*')) style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
             <i class="fas fa-fw fa-building"></i>
             <span>Classrooms</span>
         </a>

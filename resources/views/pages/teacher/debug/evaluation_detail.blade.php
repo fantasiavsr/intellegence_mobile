@@ -37,13 +37,50 @@
                             </h1>
                         </div>
                         <div class="pb-2">
-                            <a href="" class="btn btn-lg shadow-custom-alt mt-2 text-light"
+                            {{-- <a href="" class="btn btn-lg shadow-custom-alt mt-2 text-light"
                                 style="background-color: #30445C">
-                                Update</a>
+                                Update</a> --}}
                             <a href="" class="btn btn-lg shadow-custom-green mt-2 text-light"
-                                style="background-color: #4FBEAB">
+                                style="background-color: #30445C">
                                 Evaluate</a>
                         </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="card shadow-custom mb-4" style="width:100%; background-color: #30445C">
+                                <!-- Card Body -->
+                                <div class="card-body text-light" style="">
+                                    <div class="row">
+                                        <div class="col d-flex">
+                                            <label class="form-label text-light" style="">Evaluation Ready
+                                                <i class="fas fa-fw fa-bookmark"></i>
+                                                <span>
+                                                    <p class="text-light" style="font-size: 12px; margin-bottom: 0;">Open AI
+                                                    </p>
+                                                </span>
+                                            </label>
+
+                                        </div>
+                                        <div class="col text-right">
+                                            <button id="toggleButton" class="btn btn-primary"
+                                                onclick="toggleEvaluation()">Show
+                                                Evaluation</button>
+                                        </div>
+                                    </div>
+                                    <p id="evaluationText" class="pt-3" style="margin-top: 0; display: none;">
+                                        Evaluasi kode yang diberikan:
+
+                                        Terdapat kesalahan dan beberapa saran untuk meningkatkan kinerja kode. Kesalahan
+                                        utama adalah fungsi MyAp yang tidak terdefinisi seharusnya MyApp. Selain itu,
+                                        beberapa saran diberikan untuk memperbaiki kinerja: menambahkan parameter key pada
+                                        konstruktor publik, dan menggunakan kata kunci const untuk meningkatkan performa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="row">
@@ -54,7 +91,8 @@
                                 <div class="card-body">
                                     <label class="form-label" style="">Question
                                         <span>
-                                            <p class="text-grey" style="font-size: 12px; margin-bottom: 0;">question id: {{ $evaluation->question_id }}</p>
+                                            <p class="text-grey" style="font-size: 12px; margin-bottom: 0;">question id:
+                                                {{ $evaluation->question_id }}</p>
                                         </span>
                                     </label>
                                     <p class="pt-0" style="margin-top: 0;">
@@ -121,9 +159,9 @@
 
 
                         <div class="col d-flex">
-                            <div class="card shadow-custom-green mb-4" style="width:100%">
+                            <div class="card shadow-custom-green mb-4" style="width:100%; background-color: #4FBEAB">
                                 <!-- Card Body -->
-                                <div class="card-body text-light" style="background-color: #4FBEAB">
+                                <div class="card-body text-light" style="">
 
                                     <div class="row d-flex px-3">
                                         <div class="col">
@@ -230,4 +268,19 @@
             info: false
         });
     </script> --}}
+
+    <script>
+        function toggleEvaluation() {
+            var evaluationText = document.getElementById("evaluationText");
+            var toggleButton = document.getElementById("toggleButton");
+
+            if (evaluationText.style.display === "none") {
+                evaluationText.style.display = "block";
+                toggleButton.textContent = "Hide Evaluation";
+            } else {
+                evaluationText.style.display = "none";
+                toggleButton.textContent = "Show Evaluation";
+            }
+        }
+    </script>
 @endsection
