@@ -1,4 +1,4 @@
-@extends('layouts.core')
+@extends('layouts.core_editor')
 
 @section('content')
     <!-- Page Wrapper -->
@@ -166,7 +166,7 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    @include('Partials.scrolltotop')
+    {{-- @include('Partials.scrolltotop') --}}
 
     <!-- Logout Modal-->
     @include('Partials.logoutmodal')

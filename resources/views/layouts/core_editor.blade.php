@@ -20,7 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('demo/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
 
     <!-- Custom styles for DataTable-->
     <link href="{{ asset('demo/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
@@ -37,22 +37,22 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('demo/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('demo/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    {{-- <script src="{{ asset('demo/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset('demo/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    {{-- <script src="{{ asset('demo/vendor/jquery-easing/jquery.easing.min.js') }}"></script> --}}
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('demo/js/sb-admin-2.min.js') }}"></script>
 
     <!-- DataTables scripts -->
-    <script src="{{ asset('demo/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    {{-- <script src="{{ asset('demo/vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('demo/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
-    <script src="{{ asset('demo/js/demo/datatables-demo.js') }}""></script>
+    <script src="{{ asset('demo/js/demo/datatables-demo.js') }}""></script> --}}
 
     {{-- Custom DataTables --}}
-    <script>
+    {{-- <script>
         $('table').dataTable({
             searching: true,
             paging: true,
@@ -63,7 +63,7 @@
                 [5, 10, 25, 50, 100]
             ]
         });
-    </script>
+    </script> --}}
 
     <!-- Monaco Editor -->
     <script>
@@ -72,6 +72,7 @@
             var editor = monaco.editor.create(document.getElementById('editor'), {
                 value: [
                     "// This is a simple Dart program.",
+                    "// Delete all to empty key answer",
                     "import 'package:flutter/material.dart';",
                     "",
                     "void main() {",
@@ -102,7 +103,7 @@
             document.querySelector('form').addEventListener('submit', function() {
                 var value = editor.getValue();
                 // Set nilai editor sebagai nilai dari textarea dengan name 'key_answer'
-                document.querySelector('textarea[name="answer"]').value = value;
+                document.querySelector('textarea[name="key_answer"]').value = value;
             });
         });
     </script>

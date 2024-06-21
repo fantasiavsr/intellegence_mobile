@@ -1,4 +1,4 @@
-@extends('layouts.core_editor2')
+@extends('layouts.core')
 
 @section('content')
     <!-- Page Wrapper -->
@@ -23,7 +23,7 @@
 
                     {{-- Sub Title --}}
                     <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
-                        <h1 class="h3 mb-0 text-gray-800 ">Question ID: {{ $question->id }}</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">Add Item</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -34,8 +34,7 @@
 
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <div class=" align-items-center justify-content-between">
-                                        {{-- <h1 class="h4 mb-0 text-gray-800 ">Add Question</h1> --}}
-                                        <p>{{ $question->question }}</p>
+                                        <h1 class="h4 mb-0 text-gray-800 ">Add Test</h1>
                                     </div>
                                 </div>
 
@@ -59,60 +58,45 @@
                                         </div>
                                     @endif
 
-                                    <form action="{{ route('teacher.debug.add_answer.store') }}" method="POST">
+                                    <form action="{{ route('teacher.tests.store') }}" method="POST">
                                         @csrf
                                         {{-- {{ $this_item->id }} --}}
                                         {{-- <input type="hidden" name="id" value="{{ $this_item->id }}"> --}}
-                                        <input type="hidden" name="question_id" value="{{ $question->id }}">
+                                        {{-- classroom_id --}}
+                                        {{-- <input type="hidden" name="classroom_id" value="{{ $classroom->id }}"> --}}
+
                                         <div class="row d-flex">
-
-                                            <div class="col-sm form-outline mb-4">
-
-                                                <style>
-                                                    #editor {
-                                                        width: 100%;
-                                                        height: 400px;
-                                                        border: 1px solid #333;
-                                                        border-radius: 4px;
-                                                    }
-
-                                                    .form-label {
-                                                        color: #d4d4d4;
-                                                        /* Label color */
-                                                        font-family: Arial, sans-serif;
-                                                        /* Label font family */
-                                                        font-size: 14px;
-                                                        /* Label font size */
-                                                    }
-
-                                                    .text-grey {
-                                                        color: #a0a0a0;
-                                                        /* Grey text color */
-                                                    }
-                                                </style>
-                                                <label class="form-label">Key Answer
-                                                    <span>
-                                                        <p class="text-grey" style="font-size: 12px">*exact flutter code</p>
-                                                    </span>
-                                                </label>
-                                                <textarea name="answer" style="display: none;"></textarea>
-                                                <div id="editor"></div>
-
+                                            <div class="col form-outline mb-4">
+                                                <label class="form-label">Name<span>
+                                                        <p class="text-danger" style="font-size: 12px">*Required</p>
+                                                    </span></label>
+                                                <input type="text" class="form-control" name="name" required />
                                             </div>
-
-
+                                            <div class="col form-outline">
+                                                <label class="form-label">Classroom<span>
+                                                        <p class="text-danger" style="font-size: 12px">*Required</p>
+                                                    </span></label>
+                                                <select type="text" name="classroom_id" class="form-control" autofocus
+                                                    required>
+                                                    @foreach ($classroom as $item)
+                                                        <option value="{{ $item->id }}">
+                                                            {{ $item->id }} - {{ $item->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <!-- Submit button -->
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('teacher.debug.answer_question') }}"
-                                                    class="btn btn-lg mt-2 px-5 mb-4"
+                                                <a href="" class="btn btn-lg mt-2 px-5 mb-4"
                                                     style="background-color: #F9FAFC; width:100%">Cancel</a>
                                             </div>
                                             <div class="col">
                                                 <button class="btn btn-lg mt-2 px-5 mb-4 text-light"
-                                                    style="background-color: #4FBEAB; width:100%">Answer</button>
+                                                    style="background-color: #4FBEAB; width:100%"
+                                                    type="submit">Create</button>
                                             </div>
                                         </div>
                                     </form>
@@ -144,7 +128,7 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-   {{--  @include('Partials.scrolltotop') --}}
+    @include('Partials.scrolltotop')
 
     <!-- Logout Modal-->
     @include('Partials.logoutmodal')

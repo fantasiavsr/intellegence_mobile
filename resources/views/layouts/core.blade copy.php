@@ -20,14 +20,14 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('demo/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-    {{-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Custom styles for DataTable-->
     <link href="{{ asset('demo/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
     <!-- Monaco Editor -->
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/editor/editor.main.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/loader.min.js"></script> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/editor/editor.main.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/loader.min.js"></script>
 
 </head>
 
@@ -66,7 +66,7 @@
     </script>
 
     <!-- Monaco Editor -->
-    {{-- <script>
+    <script>
         require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs' }});
         require(['vs/editor/editor.main'], function() {
             var editor = monaco.editor.create(document.getElementById('editor'), {
@@ -106,7 +106,7 @@
                 document.querySelector('textarea[name="key_answer"]').value = value;
             });
         });
-    </script> --}}
+    </script>
 
 </body>
 

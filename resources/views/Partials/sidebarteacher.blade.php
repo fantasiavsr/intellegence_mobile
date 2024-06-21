@@ -32,9 +32,9 @@
     </div>
 
     <!-- Nav Item  -->
-    <li class="nav-item {{ (request()->is('admin-transaksi')) ? 'active' : '' }}">
-        <a class="nav-link " href=""
-            @if ($title === 'Admin - List Transaksi') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
+    <li class="nav-item {{ (request()->is('/pages/teacher/tests')) ? 'active' : '' }}">
+        <a class="nav-link " href="{{ route('teacher.tests') }}"
+            @if ($title === 'Test') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
             <i class="fas fa-fw fa-folder"></i>
             <span>Test List</span>
         </a>
@@ -55,18 +55,18 @@
     </div>
 
     <!-- Nav Item - Item -->
-    <li class="nav-item {{ (request()->is('admin-item')) ? 'active' : '' }}">
-        <a class="nav-link " href=""
-            @if ($title === 'Admin - List Item') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
+    <li class="nav-item {{ (request()->is('pages/teacher/classroom')) ? 'active' : '' }}">
+        <a class="nav-link " href="{{ route('teacher.classroom') }}"
+            @if ($title === 'Classroom') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
             <i class="fas fa-fw fa-building"></i>
             <span>Classrooms</span>
         </a>
     </li>
 
     <!-- Nav Item - Item -->
-    <li class="nav-item {{ (request()->is('admin-item')) ? 'active' : '' }}">
-        <a class="nav-link " href=""
-            @if ($title === 'Admin - List Item') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
+    <li class="nav-item {{ (request()->is('pages/teacher/students')) ? 'active' : '' }}">
+        <a class="nav-link " href="{{ route('teacher.students') }}"
+            @if ($title === 'Students') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
             <i class="fas fa-fw fa-graduation-cap"></i>
             <span>Students</span>
         </a>

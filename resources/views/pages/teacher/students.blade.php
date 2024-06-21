@@ -23,7 +23,7 @@
 
                     {{-- Sub Title --}}
                     <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
-                        <h1 class="h3 text-gray-800 ">Evaluation List</h1>
+                        <h1 class="h3 text-gray-800 ">Student List</h1>
                         {{-- <a class="" href="{{ route('teacher.debug.add_question') }}">
                             <button class="btn btn-primary btn-icon-split">
                                 <span class="icon text-white-50">
@@ -45,68 +45,34 @@
                                         <table class="table table-hover" id="dataTable">
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
-                                                    <th>Test ID</th>
-                                                    <th>Question ID</th>
-                                                    <th>Answer ID</th>
-                                                    <th>Error Count</th>
-                                                    <th>Error Penalty</th>
-                                                    <th>Diff Penalty</th>
-                                                    <th>Missing Keyword</th>
-                                                    <th>Word Penalty</th>
-                                                    <th>Total Penalty</th>
-                                                    <th>Score</th>
-                                                    <th>Detail</th>
+                                                    <th>No</th>
+                                                    <th>Student ID</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Username</th>
+                                                    <th>Created at</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($evaluations as $item)
+                                                @foreach ($student as $item)
                                                     <tr class="">
-                                                        {{-- <td>
-                                                            <img class="avatar rounded-circle me-2"
-                                                                @if ($image->where('produk_green_id', $item->id)->pluck('image')->first() != null) src="{{ asset('img/produk/' .$image->where('produk_green_id', $item->id)->pluck('image')->first()) }}"
-                                                            @else
-                                                                src="{{ asset('img/produk/default.png') }}" @endif
-                                                                alt="" style="width:42px; height:42px">
-                                                        </td> --}}
+                                                        <td>
+                                                            {{ $loop->iteration }}
+                                                        </td>
                                                         <td>
                                                             {{ $item->id }}
                                                         </td>
                                                         <td>
-                                                            {{ $item->test_id }}
+                                                            {{ $item->name }}
                                                         </td>
                                                         <td>
-                                                            {{ $item->question_id }}
+                                                            {{ $item->email }}
                                                         </td>
                                                         <td>
-                                                            {{ $item->answer_id }}
+                                                            {{ $item->username }}
                                                         </td>
                                                         <td>
-                                                            {{ $item->analyze_error_count }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->analyze_penalty }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->differences_penalty }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->missing_keywords }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->keyword_penalty }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->total_penalty }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->score }}
-                                                        </td>
-                                                        <td>
-                                                            <a href="{{ route('teacher.debug.evaluation.detail', $item->id) }}"
-                                                                class="btn btn-sm btn-primary pr-5 pl-1">
-                                                                Detail
-                                                            </a>
+                                                            {{ $item->created_at }}
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -155,5 +121,4 @@
             info: false
         });
     </script> --}}
-
 @endsection

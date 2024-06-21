@@ -82,13 +82,16 @@ def evaluate_flutter_code(student_code_path, kunci_jawaban_path, keywords):
         differences_result = {'error_count': 0, 'differences': []}
 
     analyze_penalty = min(analyze_error_count * 3, 30)
-    differences_penalty = min(differences_result['error_count'] * 2, 20)
+    differences_penalty = min(differences_result['error_count'] * 0.6, 20)
 
     keyword_penalty = 0
     missing_keywords = []
     if keywords:
         missing_keyword_count, missing_keywords = check_keywords(student_code_path, keywords)
-        keyword_penalty = min(missing_keyword_count * 5, 50)
+        max_keyword_penalty = 50
+        if len(keywords) > 0:
+            penalty_per_keyword = max_keyword_penalty / len(keywords)
+            keyword_penalty = min(missing_keyword_count * penalty_per_keyword, max_keyword_penalty)
 
     total_penalty = min(analyze_penalty + differences_penalty + keyword_penalty, 100)
     score = max(100 - total_penalty, 0)

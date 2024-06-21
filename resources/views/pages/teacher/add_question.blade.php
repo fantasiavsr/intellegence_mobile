@@ -1,4 +1,4 @@
-@extends('layouts.core_editor2')
+@extends('layouts.core_editor')
 
 @section('content')
     <!-- Page Wrapper -->
@@ -22,9 +22,9 @@
                 <div class="container-fluid">
 
                     {{-- Sub Title --}}
-                    <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
-                        <h1 class="h3 mb-0 text-gray-800 ">Question ID: {{ $question->id }}</h1>
-                    </div>
+                    {{-- <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
+                        <h1 class="h3 mb-0 text-gray-800 ">Add Item</h1>
+                    </div> --}}
 
                     <!-- Content Row -->
                     <div class="row">
@@ -34,8 +34,7 @@
 
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <div class=" align-items-center justify-content-between">
-                                        {{-- <h1 class="h4 mb-0 text-gray-800 ">Add Question</h1> --}}
-                                        <p>{{ $question->question }}</p>
+                                        <h1 class="h4 mb-0 text-gray-800 ">Add Question</h1>
                                     </div>
                                 </div>
 
@@ -59,12 +58,43 @@
                                         </div>
                                     @endif
 
-                                    <form action="{{ route('teacher.debug.add_answer.store') }}" method="POST">
+                                    <form action="{{ route('teacher.tests.store_question') }}" method="POST">
                                         @csrf
                                         {{-- {{ $this_item->id }} --}}
                                         {{-- <input type="hidden" name="id" value="{{ $this_item->id }}"> --}}
-                                        <input type="hidden" name="question_id" value="{{ $question->id }}">
+
                                         <div class="row d-flex">
+                                            <div class="col-sm-1 form-outline mb-4">
+                                                <label class="form-label">Test ID<span>
+                                                        <p class="text-danger" style="font-size: 12px">*Required</p>
+                                                    </span></label>
+                                                <select type="text" name="test_id" class="form-control" autofocus
+                                                    required>
+                                                    @foreach ($test as $item)
+                                                        {{-- <option value="{{ $item->id }}">
+                                                            {{ $item->id }}
+                                                        </option> --}}
+                                                        @if ($item->id == $thistest->id)
+                                                            <option value="{{ $item->id }}" selected>
+                                                                {{ $item->id }}
+                                                            </option>
+                                                        @else
+                                                            <option value="{{ $item->id }}">
+                                                                {{ $item->id }}
+                                                            </option>
+
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm form-outline mb-4">
+                                                <label class="form-label">Question<span>
+                                                        <p class="text-danger" style="font-size: 12px">*Required</p>
+                                                    </span></label>
+                                                <input type="text" name="question" class="form-control" autofocus
+                                                    required>
+                                            </div>
 
                                             <div class="col-sm form-outline mb-4">
 
@@ -77,17 +107,13 @@
                                                     }
 
                                                     .form-label {
-                                                        color: #d4d4d4;
-                                                        /* Label color */
-                                                        font-family: Arial, sans-serif;
-                                                        /* Label font family */
-                                                        font-size: 14px;
-                                                        /* Label font size */
+                                                        color: #d4d4d4; /* Label color */
+                                                        font-family: Arial, sans-serif; /* Label font family */
+                                                        font-size: 14px; /* Label font size */
                                                     }
 
                                                     .text-grey {
-                                                        color: #a0a0a0;
-                                                        /* Grey text color */
+                                                        color: #a0a0a0; /* Grey text color */
                                                     }
                                                 </style>
                                                 <label class="form-label">Key Answer
@@ -95,24 +121,30 @@
                                                         <p class="text-grey" style="font-size: 12px">*exact flutter code</p>
                                                     </span>
                                                 </label>
-                                                <textarea name="answer" style="display: none;"></textarea>
+                                                <textarea name="key_answer" style="display: none;"></textarea>
                                                 <div id="editor"></div>
 
-                                            </div>
+                                                <label class="form-label pt-3">Key Word<span>
+                                                        <p class="text-grey" style="font-size: 12px">*seperate key word with
+                                                            comma</p>
+                                                    </span></label>
+                                                <input type="text" name="key_word" class="form-control" autofocus
+                                                    required>
 
+                                            </div>
 
                                         </div>
 
                                         <!-- Submit button -->
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('teacher.debug.answer_question') }}"
+                                                <a href="{{ route('teacher.debug.input_question') }}"
                                                     class="btn btn-lg mt-2 px-5 mb-4"
                                                     style="background-color: #F9FAFC; width:100%">Cancel</a>
                                             </div>
                                             <div class="col">
                                                 <button class="btn btn-lg mt-2 px-5 mb-4 text-light"
-                                                    style="background-color: #4FBEAB; width:100%">Answer</button>
+                                                    style="background-color: #4FBEAB; width:100%" type="submit">Create</button>
                                             </div>
                                         </div>
                                     </form>
@@ -144,7 +176,7 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-   {{--  @include('Partials.scrolltotop') --}}
+    {{-- @include('Partials.scrolltotop') --}}
 
     <!-- Logout Modal-->
     @include('Partials.logoutmodal')
