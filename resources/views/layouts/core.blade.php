@@ -25,6 +25,10 @@
     <!-- Custom styles for DataTable-->
     <link href="{{ asset('demo/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
+    <!-- Monaco Editor -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/editor/editor.main.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/loader.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -58,6 +62,18 @@
                 [5, 10, 25, 50, 100],
                 [5, 10, 25, 50, 100]
             ]
+        });
+    </script>
+
+    <!-- Monaco Editor -->
+    <script>
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs' }});
+        require(['vs/editor/editor.main'], function() {
+            monaco.editor.create(document.getElementById('editor'), {
+                value: "// Start typing your Flutter code here",
+                language: 'dart',
+                theme: 'vs-dark'
+            });
         });
     </script>
 </body>
