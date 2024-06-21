@@ -1,4 +1,4 @@
-@extends('layouts.core')
+@extends('layouts.core2')
 
 @section('content')
     <!-- Page Wrapper -->
@@ -67,11 +67,41 @@
                                         <div class="row d-flex">
 
                                             <div class="col-sm form-outline mb-4">
-                                                <label class="form-label">Answer<span>
-                                                        <p class="text-danger" style="font-size: 12px">*Required</p>
-                                                    </span></label>
-                                                <textarea name="answer" class="form-control" rows="10" autofocus></textarea>
+
+                                                <style>
+                                                    #editor {
+                                                        width: 100%;
+                                                        height: 400px;
+                                                        border: 1px solid #333;
+                                                        border-radius: 4px;
+                                                    }
+
+                                                    .form-label {
+                                                        color: #d4d4d4;
+                                                        /* Label color */
+                                                        font-family: Arial, sans-serif;
+                                                        /* Label font family */
+                                                        font-size: 14px;
+                                                        /* Label font size */
+                                                    }
+
+                                                    .text-grey {
+                                                        color: #a0a0a0;
+                                                        /* Grey text color */
+                                                    }
+                                                </style>
+                                                <label class="form-label">Key Answer
+                                                    <span>
+                                                        <p class="text-grey" style="font-size: 12px">*exact flutter code</p>
+                                                    </span>
+                                                </label>
+                                                <textarea name="answer" style="display: none;"></textarea>
+                                                <div id="editor"></div>
+
+
+
                                             </div>
+
 
                                         </div>
 

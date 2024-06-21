@@ -72,7 +72,6 @@
             var editor = monaco.editor.create(document.getElementById('editor'), {
                 value: [
                     "// This is a simple Dart program.",
-                    "// Delete all to empty key answer",
                     "import 'package:flutter/material.dart';",
                     "",
                     "void main() {",
@@ -103,7 +102,7 @@
             document.querySelector('form').addEventListener('submit', function() {
                 var value = editor.getValue();
                 // Set nilai editor sebagai nilai dari textarea dengan name 'key_answer'
-                document.querySelector('textarea[name="key_answer"]').value = value;
+                document.querySelector('textarea[name="answer"]').value = value;
             });
         });
     </script>

@@ -35,7 +35,7 @@
     <li class="nav-item {{ (request()->is('admin-transaksi')) ? 'active' : '' }}">
         <a class="nav-link " href=""
             @if ($title === 'Admin - List Transaksi') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-credit-card"></i>
+            <i class="fas fa-fw fa-folder"></i>
             <span>Test List</span>
         </a>
     </li>
@@ -44,7 +44,7 @@
     <li class="nav-item {{ (request()->is('admin-penjualan')) ? 'active' : '' }}">
         <a class="nav-link " href=""
             @if ($title === 'Admin - List Penjualan') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-credit-card"></i>
+            <i class="fas fa-fw fa-check"></i>
             <span>Evaluations</span>
         </a>
     </li>
@@ -58,7 +58,7 @@
     <li class="nav-item {{ (request()->is('admin-item')) ? 'active' : '' }}">
         <a class="nav-link " href=""
             @if ($title === 'Admin - List Item') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-archive"></i>
+            <i class="fas fa-fw fa-building"></i>
             <span>Classrooms</span>
         </a>
     </li>
@@ -67,7 +67,7 @@
     <li class="nav-item {{ (request()->is('admin-item')) ? 'active' : '' }}">
         <a class="nav-link " href=""
             @if ($title === 'Admin - List Item') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-archive"></i>
+            <i class="fas fa-fw fa-graduation-cap"></i>
             <span>Students</span>
         </a>
     </li>
@@ -81,7 +81,7 @@
     <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
         <a class="nav-link " href="{{ route('teacher.debug.input_question') }}"
             @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fas fa-fw fa-question-circle"></i>
             <span>Input Questions</span>
         </a>
     </li>
@@ -90,7 +90,7 @@
     <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
         <a class="nav-link " href="{{ route('teacher.debug.answer_question') }}"
             @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fas fa-fw fa-book"></i>
             <span>Answer Question</span>
         </a>
     </li>
@@ -99,7 +99,7 @@
     <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
         <a class="nav-link " href="{{ route('teacher.debug.evaluation') }}"
             @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fas fa-fw fa-check"></i>
             <span>Evaluations</span>
         </a>
     </li>

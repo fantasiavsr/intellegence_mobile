@@ -59,16 +59,15 @@ class Controller extends BaseController
         $data = request()->validate([
             'test_id' => 'required',
             'question' => 'required',
-            'key_answer' => 'nullable',
+            'key_answer' => 'nullable|string', // Mengubah validasi untuk memastikan key_answer adalah string
             'code_path' => 'nullable',
             'key_word' => 'nullable',
         ]);
 
-        /* dd ($data); */
-
         $flight = new \App\Models\Question();
         $flight->test_id = $data['test_id'];
         $flight->question = $data['question'];
+        /*  dd($flight); */
         $flight->save();
 
         // Membuat nama file yang unik
@@ -90,7 +89,7 @@ class Controller extends BaseController
         $flight->key_answer = $data['key_answer'];
         $flight->code_path = $fileName;
         $flight->key_word = $data['key_word'];
-        //dd($flight);
+        /* dd($flight); */
         $flight->save();
 
         return redirect()->route('teacher.debug.input_question');
@@ -155,7 +154,7 @@ class Controller extends BaseController
             'code_path' => 'nullable',
         ]);
 
-        // dd($data);
+        /* dd($data); */
 
         $flight = new \App\Models\Answer();
         $flight->question_id = $data['question_id'];
@@ -260,10 +259,10 @@ class Controller extends BaseController
             ]);
         }
 
-        return response()->json([
+        /* return response()->json([
             'output' => $outputData,
             'return_code' => $returnCode,
-        ]);
+        ]); */
 
         // Mendapatkan nilai dari output JSON
         $analyze_returncode = $outputData['analyze_returncode'] ?? null;
@@ -304,7 +303,7 @@ class Controller extends BaseController
         $flight->keyword_penalty = $keyword_penalty;
         $flight->total_penalty = $total_penalty;
         $flight->score = $score;
-        dd($flight);
+        /* dd($flight); */
 
         /* check if already exist */
         $exist = \App\Models\Analyze::where('user_id', $user->id)->where('question_id', $request->question_id)->where('answer_id', $request->answer_id)->first();
@@ -324,6 +323,9 @@ class Controller extends BaseController
         } else {
             $flight->save();
         }
+
+        // Set flag di session setelah operasi selesai
+        session()->put('reload_once', true);
 
         return view('pages.teacher.debug.evaluations', [
             'title' => "Evaluations",

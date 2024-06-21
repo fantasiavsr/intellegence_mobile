@@ -111,6 +111,7 @@
                                                         <p class="text-grey" style="font-size: 12px">*exact flutter code</p>
                                                     </span>
                                                 </label>
+                                                <textarea name="key_answer" style="display: none;"></textarea>
                                                 <div id="editor"></div>
 
                                                 <label class="form-label pt-3">Key Word<span>
@@ -133,7 +134,7 @@
                                             </div>
                                             <div class="col">
                                                 <button class="btn btn-lg mt-2 px-5 mb-4 text-light"
-                                                    style="background-color: #4FBEAB; width:100%">Create</button>
+                                                    style="background-color: #4FBEAB; width:100%" type="submit">Create</button>
                                             </div>
                                         </div>
                                     </form>
