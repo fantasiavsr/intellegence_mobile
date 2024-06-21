@@ -3,7 +3,7 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ 'user' }}">
         <div class="sidebar-brand-icon pt-3">
             {{-- <i class="fas fa-laugh-wink"></i> --}}
-            <img class="img" src="{{ asset('img/Untitled    .png') }}" alt="" style="width: 83%">
+            <img class="img" src="{{ asset('img/Untitled.png') }}" alt="" style="width: 83%">
             {{-- Intelligance Guidance Brand --}}
             {{-- <h5 class="pt-3 ">
                 <span style="color: #30445C">Intelligance</span> <span style="color: #30445C">Guidance</span>
