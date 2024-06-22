@@ -8,6 +8,7 @@
             {{-- <h5 class="pt-3 ">
                 <span style="color: #30445C">Intelligance</span> <span style="color: #30445C">Guidance</span>
             </h5> --}}
+            {{-- <h3 class="h3 font-weight-bold text-dark">INTELIGENT GUIDANCE</h3> --}}
         </div>
         {{-- <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div> --}}
     </a>

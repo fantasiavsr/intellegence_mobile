@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class evaluation_test extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

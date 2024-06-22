@@ -23,7 +23,7 @@
 
                     {{-- Sub Title --}}
                     <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
-                        <h1 class="h3 text-gray-800 ">Classroom {{ $test->name }}</h1>
+                        <h1 class="h3 text-gray-800 ">Test: {{ $test->name }}</h1>
 
                         <div class="">
                             <a class="" href="{{ route('teacher.tests.add_question', ['id' => $test->id]) }}">
