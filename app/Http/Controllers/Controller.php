@@ -29,6 +29,16 @@ class Controller extends BaseController
         ]);
     }
 
+    /* dashrboard_student */
+    public function dashboard_student()
+    {
+        $user = Auth::user();
+        return view('pages.student.home', [
+            'title' => "Dashboard",
+            'user' => $user,
+        ]);
+    }
+
     public function teacher_input_question()
     {
         $user = Auth::user();
@@ -730,6 +740,23 @@ class Controller extends BaseController
             'user' => $user,
             'test' => $test,
             'evaluations' => $evaluations,
+        ]);
+    }
+
+    /* student page */
+    /* student_tests */
+    public function student_tests()
+    {
+        $user = Auth::user();
+        $classroom_member = \App\Models\Classroom_member::where('user_id', $user->id)->get();
+        $classroom = \App\Models\Classroom::whereIn('id', $classroom_member->pluck('classroom_id'))->get();
+        $test = \App\Models\Test::whereIn('classroom_id', $classroom->pluck('id'))->get();
+
+        return view('pages.student.test', [
+            'title' => "Test",
+            'user' => $user,
+            'test' => $test,
+            'classroom' => $classroom,
         ]);
     }
 }

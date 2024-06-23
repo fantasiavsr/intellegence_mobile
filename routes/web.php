@@ -29,15 +29,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/pages/student/home', function () {
+/* Route::get('/pages/student/home', function () {
     return view('pages.student.home');
-})->name('student.home')->middleware('checkUserLevel:student');
+})->name('student.home')->middleware('checkUserLevel:student'); */
 
 /* Route::get('/pages/teacher/home', function () {
     return view('pages.teacher.home');
 })->name('teacher.home')->middleware('checkUserLevel:teacher'); */
 
 Route::get('/pages/teacher/home', [Controller::class, 'dashboard_teacher'])->name('teacher.home')->middleware('checkUserLevel:teacher');
+Route::get('/pages/student/home', [Controller::class, 'dashboard_student'])->name('student.home')->middleware('checkUserLevel:student');
 
 /* debug */
 Route::get('/pages/teacher/debug/input_question', [Controller::class, 'teacher_input_question'])->name('teacher.debug.input_question')->middleware('checkUserLevel:teacher');
@@ -97,3 +98,7 @@ Route::get('/pages/teacher/tests/add_question/{id}', [Controller::class, 'teache
 Route::post('/pages/teacher/tests/add_question', [Controller::class, 'teacher_tests_store_question'])->name('teacher.tests.store_question')->middleware('checkUserLevel:teacher');
 /* test evaluation page */
 Route::get('/pages/teacher/tests/evaluations/{id}', [Controller::class, 'teacher_tests_evaluation'])->name('teacher.tests.evaluation')->middleware('checkUserLevel:teacher');
+
+/* student */
+/* student test list */
+Route::get('/pages/student/tests', [Controller::class, 'student_tests'])->name('student.tests')->middleware('checkUserLevel:student');
