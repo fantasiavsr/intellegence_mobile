@@ -94,6 +94,10 @@ Route::put('/pages/teacher/tests/edit/{id}', [Controller::class, 'teacher_tests_
 Route::delete('/pages/teacher/tests/edit/{id}', [Controller::class, 'teacher_test_delete_question'])->name('teacher.question.delete')->middleware('checkUserLevel:teacher');
 /* test question add */
 Route::get('/pages/teacher/tests/add_question/{id}', [Controller::class, 'teacher_tests_add_question'])->name('teacher.tests.add_question')->middleware('checkUserLevel:teacher');
+/* test question add with openAI*/
+Route::get('/pages/teacher/tests/add_question_openai/{id}', [ChatGPTController::class, 'teacher_tests_add_question_openai'])->name('teacher.tests.add_question_openai')->middleware('checkUserLevel:teacher');
+/* test question add with openAI store */
+Route::post('/pages/teacher/tests/add_question_openai', [ChatGPTController::class, 'teacher_tests_store_question_openai'])->name('teacher.tests.store_question_openai')->middleware('checkUserLevel:teacher');
 /* test question store */
 Route::post('/pages/teacher/tests/add_question', [Controller::class, 'teacher_tests_store_question'])->name('teacher.tests.store_question')->middleware('checkUserLevel:teacher');
 /* test evaluation page */

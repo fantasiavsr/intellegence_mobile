@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
 
 class ChatGPTController extends Controller
 {
@@ -153,5 +154,49 @@ class ChatGPTController extends Controller
         $flight->save();
 
         return redirect()->route('teacher.debug.evaluation.detail', ['id' => $data['analyze_id']]);
+    }
+
+    /* teacher_tests_add_question_openai page */
+    public function teacher_tests_add_question_openai($id)
+    {
+        $user = Auth::user();
+        $thistest = \App\Models\Test::where('id', $id)->first();
+        $test = \App\Models\Test::where('user_id', $user->id)->get();
+
+        $data = request()->validate([
+            'question' => 'required',
+        ]);
+
+        $question = $data['question'];
+
+        $content = <<<EOT
+        buatkan kunci jawabwan berupa kode dart untuk soal berikut ini (langsung jawab dengan kode jangan perlu dijelaskan):
+        $question
+        EOT;
+
+        $response = $this->httpClient->post('chat/completions', [
+            'json' => [
+                'model' => 'gpt-3.5-turbo',
+                'messages' => [
+                    ['role' => 'system', 'content' => 'You are a helpful assistant.'],
+                    ['role' => 'user', 'content' => $content],
+                ],
+            ],
+        ]);
+
+        $result = json_decode($response->getBody(), true)['choices'][0]['message']['content'];
+        // Menggunakan ekspresi reguler untuk mengekstrak kode Dart
+        preg_match('/```dart(.*?)```/s', $result, $matches);
+        $dartCode = trim($matches[1]);
+
+        /* dd($dartCode); */
+        return view('pages.teacher.add_question_with_open_ai', [
+            'title' => "Add Question",
+            'user' => $user,
+            'thistest' => $thistest,
+            'test' => $test,
+            'question' => $question,
+            'dartCode' => $dartCode,
+        ]);
     }
 }

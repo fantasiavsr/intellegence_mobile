@@ -14,6 +14,22 @@
             <!-- Main Content -->
             <div id="content">
 
+                <div id="formOverlay" class="overlay hidden">
+                    <div class="form-container">
+                        <form action="{{ route('teacher.tests.add_question_openai', ['id' => $test->id]) }}" method="GET">
+                            @csrf
+                            <div class="form-group">
+                                <label for="question">Question</label>
+                                <input type="text" id="question" name="question" class="form-control" required>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-secondary" onclick="hideForm()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 <!-- Topbar -->
                 @include('Partials.topbar')
                 <!-- End of Topbar -->
@@ -26,6 +42,14 @@
                         <h1 class="h3 text-gray-800 ">Test: {{ $test->name }}</h1>
 
                         <div class="">
+                            <a class="" href="javascript:void(0);" onclick="showForm()">
+                                <button class="btn btn-dark btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                    <span class="text">Add Question with OpenAI</span>
+                                </button>
+                            </a>
                             <a class="" href="{{ route('teacher.tests.add_question', ['id' => $test->id]) }}">
                                 <button class="btn btn-primary btn-icon-split">
                                     <span class="icon text-white-50">
@@ -61,7 +85,8 @@
                                         </div>
                                     @endif
 
-                                    <form id="updateForm" action="{{ route('teacher.tests.update', ['id' => $test->id]) }}" method="POST">
+                                    <form id="updateForm" action="{{ route('teacher.tests.update', ['id' => $test->id]) }}"
+                                        method="POST">
                                         @csrf
                                         @method('PUT')
                                         {{-- {{ $this_item->id }} --}}
@@ -77,15 +102,16 @@
 
                                             <div class="col-sm form-outline mb-4">
                                                 <label class="form-label">Classroom</label>
-                                            <select type="text" name="classroom_id" class="form-control" autofocus
-                                                required>
-                                                @foreach ($classroom as $item)
-                                                    {{-- if --}}
-                                                    <option value="{{ $item->id }}" @if ($item->id == $test->classroom_id) selected @endif>
-                                                        {{ $item->id }} - {{ $item->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
+                                                <select type="text" name="classroom_id" class="form-control" autofocus
+                                                    required>
+                                                    @foreach ($classroom as $item)
+                                                        {{-- if --}}
+                                                        <option value="{{ $item->id }}"
+                                                            @if ($item->id == $test->classroom_id) selected @endif>
+                                                            {{ $item->id }} - {{ $item->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
 
                                         </div>
@@ -99,7 +125,6 @@
                         </div>
 
                     </div>
-
 
                     <!-- Content Row -->
                     <div class="row">
@@ -144,20 +169,19 @@
                                                             {{ $item->created_at }}
                                                         </td>
                                                         <td>
-                                                            <a href=" "
-                                                                class="btn btn-sm btn-warning pr-5 pl-1">
+                                                            <a href=" " class="btn btn-sm btn-warning pr-5 pl-1">
                                                                 Edit
                                                             </a>
                                                         </td>
                                                         <td>
                                                             <form
-                                                            action="{{ route('teacher.question.delete', ['id' => $item->id]) }}"
-                                                            method="POST" onclick="return confirm('Are you sure?')">
-                                                            @method('delete')
-                                                            @csrf
-                                                            <button type="submit"
-                                                                class="btn btn-sm btn-danger pr-4 pl-1">Delete</button>
-                                                        </form>
+                                                                action="{{ route('teacher.question.delete', ['id' => $item->id]) }}"
+                                                                method="POST" onclick="return confirm('Are you sure?')">
+                                                                @method('delete')
+                                                                @csrf
+                                                                <button type="submit"
+                                                                    class="btn btn-sm btn-danger pr-4 pl-1">Delete</button>
+                                                            </form>
                                                         </td>
 
                                                     </tr>
@@ -211,5 +235,15 @@
         document.getElementById('updateButton').addEventListener('click', function() {
             document.getElementById('updateForm').submit();
         });
+    </script>
+
+    <script>
+        function showForm() {
+            document.getElementById('formOverlay').classList.remove('hidden');
+        }
+
+        function hideForm() {
+            document.getElementById('formOverlay').classList.add('hidden');
+        }
     </script>
 @endsection

@@ -29,6 +29,51 @@
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/editor/editor.main.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.1/min/vs/loader.min.js"></script> --}}
 
+    <style>
+        .hidden {
+            display: none !important;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .form-container {
+            background-color: #f8f9fc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            width: 300px;
+        }
+
+        .form-container .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            width: 48%;
+        }
+    </style>
 </head>
 
 <body id="page-top">
