@@ -62,6 +62,28 @@
                         <div class="col">
                             <div class="card shadow-custom mb-4" style="width:100%; background-color: #30445C">
                                 <!-- Card Body -->
+                                {{--  <div class="card-body text-light" style="">
+                                    <div class="row">
+                                        <div class="col d-flex">
+                                            <label class="form-label text-light" style="">Evaluation Ready
+                                                <i class="fas fa-fw fa-bookmark"></i>
+                                                <span>
+                                                    <p class="text-light" style="font-size: 12px; margin-bottom: 0;">Open AI
+                                                    </p>
+                                                </span>
+                                            </label>
+
+                                        </div>
+                                        <div class="col text-right">
+                                            <button id="toggleButton" class="btn btn-primary"
+                                                onclick="toggleEvaluation()">Show
+                                                Evaluation</button>
+                                        </div>
+                                    </div>
+                                    <pre id="evaluationText" class="pt-3 text-light" style="margin-top: 0; display: none;"><code>{{ $feedback->feedback }}</code></pre>
+                                </div> --}}
+
+                                @if (isset($feedback))
                                 <div class="card-body text-light" style="">
                                     <div class="row">
                                         <div class="col d-flex">
@@ -82,6 +104,22 @@
                                     </div>
                                     <pre id="evaluationText" class="pt-3 text-light" style="margin-top: 0; display: none;"><code>{{ $feedback->feedback }}</code></pre>
                                 </div>
+                                @else
+                                <div class="card-body text-light" style="">
+                                    <div class="row">
+                                        <div class="col d-flex">
+                                            <label class="form-label text-light" style="">Feedback Not Ready
+                                                <i class="fas fa-fw fa-close"></i>
+                                                <span>
+                                                    <p class="text-light" style="font-size: 12px; margin-bottom: 0;">Please click evaluate button to evaluate the answer
+                                                    </p>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                @endif
                             </div>
                         </div>
 
