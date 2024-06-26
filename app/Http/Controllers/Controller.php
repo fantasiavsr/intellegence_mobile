@@ -351,6 +351,9 @@ class Controller extends BaseController
         $question = \App\Models\Question::where('id', $evaluation->question_id)->first();
         $answer = \App\Models\Answer::where('id', $evaluation->answer_id)->first();
         $test = \App\Models\Test::where('id', $evaluation->test_id)->first();
+        $feedback = \App\Models\Feedback::where('analyze_id', $evaluation->id)->first();
+
+        /* dd('feedback', $feedback); */
 
         /* dd($evaluation, $question, $answer, $test); */
 
@@ -361,6 +364,7 @@ class Controller extends BaseController
             'question' => $question,
             'answer' => $answer,
             'test' => $test,
+            'feedback' => $feedback,
         ]);
     }
 

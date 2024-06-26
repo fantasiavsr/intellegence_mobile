@@ -102,3 +102,7 @@ Route::get('/pages/teacher/tests/evaluations/{id}', [Controller::class, 'teacher
 /* student */
 /* student test list */
 Route::get('/pages/student/tests', [Controller::class, 'student_tests'])->name('student.tests')->middleware('checkUserLevel:student');
+
+/* evaluate chatgpt */
+/* post */
+Route::post('/pages/teacher/debug/evaluations', [ChatGPTController::class, 'answer_evaluate'])->name('answer.evaluate');

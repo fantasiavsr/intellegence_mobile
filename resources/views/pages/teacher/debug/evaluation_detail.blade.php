@@ -40,9 +40,20 @@
                             {{-- <a href="" class="btn btn-lg shadow-custom-alt mt-2 text-light"
                                 style="background-color: #30445C">
                                 Update</a> --}}
-                            <a href="" class="btn btn-lg shadow-custom-green mt-2 text-light"
+                            {{-- <a href="" class="btn btn-lg shadow-custom-green mt-2 text-light"
                                 style="background-color: #30445C">
-                                Evaluate</a>
+                                Evaluate</a> --}}
+                            <form action="{{ route('answer.evaluate') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="test_id" value="{{ $test->id }}">
+                                <input type="hidden" name="question_id" value="{{ $question->id }}">
+                                <input type="hidden" name="answer_id" value="{{ $answer->id }}">
+                                <input type="hidden" name="analyze_id" value="{{ $evaluation->id }}">
+
+                                <button class="btn btn-lg shadow-custom-green mt-2 text-light"
+                                    style="background-color: #30445C">
+                                    Evaluate</button>
+                            </form>
                         </div>
                     </div>
 
@@ -69,14 +80,7 @@
                                                 Evaluation</button>
                                         </div>
                                     </div>
-                                    <p id="evaluationText" class="pt-3" style="margin-top: 0; display: none;">
-                                        Evaluasi kode yang diberikan:
-
-                                        Terdapat kesalahan dan beberapa saran untuk meningkatkan kinerja kode. Kesalahan
-                                        utama adalah fungsi MyAp yang tidak terdefinisi seharusnya MyApp. Selain itu,
-                                        beberapa saran diberikan untuk memperbaiki kinerja: menambahkan parameter key pada
-                                        konstruktor publik, dan menggunakan kata kunci const untuk meningkatkan performa.
-                                    </p>
+                                    <pre id="evaluationText" class="pt-3 text-light" style="margin-top: 0; display: none;"><code>{{ $feedback->feedback }}</code></pre>
                                 </div>
                             </div>
                         </div>
