@@ -5,7 +5,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('Partials.sidebarteacher')
+        @include('Partials.sidebarstudent')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -51,6 +51,7 @@
                                                     <th>Classroom Name</th>
                                                     <th>Created at</th>
                                                     <th>Start</th>
+                                                    <th>Evaluation</th>
                                                     {{-- <th>Edit</th> --}}
                                                     {{-- <th>Delete</th> --}}
                                                 </tr>
@@ -79,9 +80,15 @@
                                                             {{ $item->created_at }}
                                                         </td>
                                                         <td>
-                                                            <a href="{{ route('teacher.tests.evaluation', ['id' => $item->id]) }}"
+                                                            <a href="{{ route('student.tests.question', ['id' => $item->id]) }}"
                                                                 class="btn btn-sm btn-success pr-5 pl-1">
                                                                 Start
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('student.tests.evaluation', ['id' => $item->id]) }}"
+                                                                class="btn btn-sm btn-primary pr-5 pl-1">
+                                                                Evaluation
                                                             </a>
                                                         </td>
                                                         {{-- <td>

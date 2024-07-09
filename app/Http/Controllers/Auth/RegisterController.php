@@ -28,7 +28,17 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+   /*  protected $redirectTo = '/home'; */
+   /* if level student go to student.tests */
+    /* if level teacher go to teacher.tests */
+    protected function redirectTo()
+    {
+        if (auth()->user()->level == 'student') {
+            return 'pages/student/tests';
+        } else {
+            return 'pages/teacher/tests';
+        }
+    }
 
     /**
      * Create a new controller instance.

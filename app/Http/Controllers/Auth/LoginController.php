@@ -50,9 +50,9 @@ class LoginController extends Controller
     {
         // Redirect based on user level
         if ($user->level === 'student') {
-            return redirect('/pages/student/home');
+            return redirect('/pages/student/tests');
         } elseif ($user->level === 'teacher') {
-            return redirect('/pages/teacher/home');
+            return redirect('/pages/teacher/tests');
         } else {
             return redirect($this->redirectTo);
         }

@@ -45,37 +45,6 @@
 
 
 
-    <!-- Heading - User -->
-    <div class="sidebar-heading">
-        Debug
-    </div>
-
-    <!-- Nav Item  -->
-    <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
-        <a class="nav-link " href="{{ route('teacher.debug.input_question') }}"
-            @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-question-circle"></i>
-            <span>Input Questions</span>
-        </a>
-    </li>
-
-    <!-- Nav Item  -->
-    <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
-        <a class="nav-link " href="{{ route('teacher.debug.answer_question') }}"
-            @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-book"></i>
-            <span>Answer Question</span>
-        </a>
-    </li>
-
-    <!-- Nav Item  -->
-    <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
-        <a class="nav-link " href="{{ route('teacher.debug.evaluation') }}"
-            @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
-            <i class="fas fa-fw fa-check"></i>
-            <span>Evaluations</span>
-        </a>
-    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -98,6 +67,12 @@
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-user"></i>
             <span>Profile</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('student.learning') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Learning</span></a>
     </li>
 
     <!-- Divider -->

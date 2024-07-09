@@ -102,7 +102,7 @@
             searching: true,
             paging: true,
             info: true,
-            pageLength: 5,
+            pageLength: 10,
             lengthMenu: [
                 [5, 10, 25, 50, 100],
                 [5, 10, 25, 50, 100]

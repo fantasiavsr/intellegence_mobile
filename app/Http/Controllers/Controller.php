@@ -86,6 +86,8 @@ class Controller extends BaseController
         $keyAnswer = request()->input('key_answer'); // Mendapatkan nilai teks mentah dari input
         file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file */
         /* check if key_answer empty, key_answer = 'empty' and dont create file */
+
+        /* dd($data['key_answer']); */
         if ($data['key_answer']) {
             $fileName = 'question_' . $flight->id . '_' . now()->format('Ymd_His') . '.dart';
             $filePath = public_path('flutter_application_1/lib/' . $fileName);
@@ -690,7 +692,7 @@ class Controller extends BaseController
     }
 
     /* teacher_tests_store_question */
-    public function teacher_tests_store_question(Request $request)
+    public function teacher_tests_store_question()
     {
         $data = request()->validate([
             'test_id' => 'required',
@@ -712,6 +714,8 @@ class Controller extends BaseController
         $keyAnswer = request()->input('key_answer'); // Mendapatkan nilai teks mentah dari input
         file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file */
         /* check if key_answer empty, key_answer = 'empty' and dont create file */
+
+        /* dd($data['key_answer']); */
         if ($data['key_answer']) {
             $fileName = 'question_' . $flight->id . '_' . now()->format('Ymd_His') . '.dart';
             $filePath = public_path('flutter_application_1/lib/' . $fileName);
@@ -761,6 +765,262 @@ class Controller extends BaseController
             'user' => $user,
             'test' => $test,
             'classroom' => $classroom,
+        ]);
+    }
+
+    /* student_tests_question */
+    public function student_tests_question($id)
+    {
+        $user = Auth::user();
+        $test = \App\Models\Test::where('id', $id)->first();
+        /* dd($test); */
+        $question = \App\Models\Question::where('test_id', $test->id)->get();
+        $answered = \App\Models\Answer::where('user_id', $user->id)->where('test_id', $test->id)->get();
+        $evaluations = \App\Models\Analyze::where('test_id', $test->id)->where('user_id', $user->id)->get();
+
+        return view('pages.student.test_question', [
+            'title' => "Question",
+            'user' => $user,
+            'test' => $test,
+            'question' => $question,
+            'answered' => $answered,
+            'evaluations' => $evaluations,
+        ]);
+    }
+
+    public function student_fill_question($id)
+    {
+        $user = Auth::user();
+        $question = \App\Models\Question::where('id', $id)->first();
+        //dd($question);
+        $test = \App\Models\Test::where('id', $question->test_id)->first();
+
+        return view('pages.student.fill_question', [
+            'title' => "Fill Question",
+            'question' => $question,
+            'user' => $user,
+            'test' => $test,
+        ]);
+    }
+
+    public function student_store_answer()
+    {
+        $user = Auth::user();
+
+        $data = request()->validate([
+            'question_id' => 'required',
+            'answer' => 'required',
+            'code_path' => 'nullable',
+        ]);
+
+        /* dd($data); */
+
+        $flight = new \App\Models\Answer();
+        $flight->question_id = $data['question_id'];
+        $flight->user_id = $user->id;
+        $flight->answer = $data['answer'];
+
+        $question = \App\Models\Question::where('id', $data['question_id'])->first();
+        $test_id = $question->test_id;
+
+        $flight->test_id = $test_id;
+
+        // Membuat nama file yang unik
+        $fileName = 'answer_' . $flight->id . '_' . now()->format('Ymd_His') . '.dart';
+        // Menyimpan teks ke dalam file
+        $filePath = public_path('flutter_application_1/lib/' . $fileName);
+        $keyAnswer = request()->input('answer'); // Mendapatkan nilai teks mentah dari input
+        file_put_contents($filePath, $keyAnswer); // Menyimpan teks ke dalam file
+        $flight->code_path = $fileName;
+
+        //dd($flight);
+
+        /* udpate if this user already answered */
+        $answered = \App\Models\Answer::where('user_id', $user->id)->where('question_id', $data['question_id'])->first();
+        if ($answered) {
+            $answered->answer = $data['answer'];
+            $answered->code_path = $fileName;
+            $answered->save();
+            return redirect()->route('student.tests.question', ['id' => $test_id]);
+        }
+
+        $flight->save();
+
+        return redirect()->route('student.tests.question', ['id' => $test_id]);
+    }
+
+    public function student_tests_evaluation($id)
+    {
+        $user = Auth::user();
+        $test = \App\Models\Test::where('id', $id)->first();
+        $evaluations = \App\Models\Analyze::where('test_id', $id)->where('user_id', $user->id)->get();
+
+        return view('pages.student.evaluation', [
+            'title' => "Evaluation",
+            'user' => $user,
+            'test' => $test,
+            'evaluations' => $evaluations,
+        ]);
+    }
+
+    public function student_store_evaluation(Request $request)
+    {
+        /* dd($request); */
+        $user = Auth::user();
+        $evaluations = \App\Models\Analyze::where('user_id', $user->id)->get();
+
+        $question = \App\Models\Question::where('id', $request->question_id)->first();
+        $answer = \App\Models\Answer::where('id', $request->answer_id)->first();
+        /* dd($question, $answer); */
+
+        /* $question_path_code = $question->code_path ?? '';
+        $answer_path_code = $answer->code_path ?? '';
+        $key_word = $question->key_word ?? ''; */
+        if ($question->code_path) {
+            $question_path_code = $question->code_path;
+        } else {
+            $question_path_code = '';
+        }
+
+        if ($answer->code_path) {
+            $answer_path_code = $answer->code_path;
+        } else {
+            $answer_path_code = '';
+        }
+
+        if ($question->key_word) {
+            $key_word = $question->key_word;
+        } else {
+            $key_word = '';
+        }
+
+        /* dd($question_path_code, $answer_path_code, $key_word); */
+
+
+        // Jalankan skrip Python
+        $pythonScriptPath = public_path('python/code2.py');
+        $command = escapeshellcmd("python $pythonScriptPath $question_path_code $answer_path_code \"$key_word\"");
+
+        // Eksekusi skrip Python menggunakan exec
+        exec($command . ' 2>&1', $output, $returnCode);
+
+        // $output berisi hasil eksekusi (output skrip Python)
+        // $returnCode berisi kode keluaran dari skrip Python
+
+        // Mengonsumsi output sebagai JSON
+        $jsonOutput = implode("\n", $output);
+        $outputData = json_decode($jsonOutput, true);
+
+        // Memeriksa apakah penguraian JSON berhasil
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return response()->json([
+                'error' => 'Error decoding JSON: ' . json_last_error_msg(),
+                'output' => $jsonOutput,
+                'return_code' => $returnCode,
+            ]);
+        }
+
+        /* return response()->json([
+            'output' => $outputData,
+            'return_code' => $returnCode,
+        ]); */
+
+        // Mendapatkan nilai dari output JSON
+        $analyze_returncode = $outputData['analyze_returncode'] ?? null;
+        $analyze_stdout = $outputData['analyze_stdout'] ?? null;
+        $analyze_stderr = $outputData['analyze_stderr'] ?? null;
+        $analyze_error_count = $outputData['analyze_error_count'] ?? null;
+        $analyze_penalty = $outputData['analyze_penalty'] ?? null;
+        $differences = $outputData['differences'] ?? null;
+        $differences_total = $outputData['differences_total'] ?? null;
+        $differences_penalty = $outputData['differences_penalty'] ?? null;
+        $missing_keywords = $outputData['missing_keywords'] ?? null;
+        $keyword_penalty = $outputData['keyword_penalty'] ?? null;
+        $total_penalty = $outputData['total_penalty'] ?? null;
+        $score = $outputData['score'] ?? null;
+
+        $flight = new \App\Models\Analyze();
+        $flight->question_id = $request->question_id;
+        $flight->user_id = $user->id;
+        $flight->test_id = $question->test_id;
+        $flight->question_id = $request->question_id;
+        $flight->answer_id = $request->answer_id;
+        $flight->analyze_returncode = $analyze_returncode;
+        $flight->analyze_stdout = $analyze_stdout;
+        $flight->analyze_stderr = $analyze_stderr;
+        $flight->analyze_error_count = $analyze_error_count;
+        $flight->analyze_penalty = $analyze_penalty;
+        $flight->differences_penalty = $differences_penalty;
+        /* convert missing keyword to keyowd1, keyword2,... */
+        /* missing_keywords = implode(", ", $missing_keywords); */
+        /* check if empty */
+        if ($missing_keywords) {
+            $missing_keywords = implode(", ", $missing_keywords);
+        } else {
+            $missing_keywords = '';
+        }
+        /* dd($missing_keywords); */
+        $flight->missing_keywords = $missing_keywords;
+        $flight->keyword_penalty = $keyword_penalty;
+        $flight->total_penalty = $total_penalty;
+        $flight->score = $score;
+        /* dd($flight); */
+
+        /* check if already exist */
+        $exist = \App\Models\Analyze::where('user_id', $user->id)->where('question_id', $request->question_id)->where('answer_id', $request->answer_id)->first();
+        if ($exist) {
+            $exist->analyze_returncode = $analyze_returncode;
+            $exist->analyze_stdout = $analyze_stdout;
+            $exist->analyze_stderr = $analyze_stderr;
+            $exist->analyze_error_count = $analyze_error_count;
+            $exist->analyze_penalty = $analyze_penalty;
+            $exist->differences_penalty = $differences_penalty;
+            $exist->missing_keywords = $missing_keywords;
+            $exist->keyword_penalty = $keyword_penalty;
+            $exist->total_penalty = $total_penalty;
+            $exist->score = $score;
+            $exist->save();
+
+            $test_id = $question->test_id;
+            return redirect()->route('student.tests.question', ['id' => $test_id]);
+        } else {
+            $flight->save();
+        }
+
+        return redirect()->route('student.tests.question', ['id' => $question->test_id]);
+    }
+
+    public function student_evaluation_detail($id)
+    {
+        $user = Auth::user();
+        $evaluation = \App\Models\Analyze::where('id', $id)->first();
+        $question = \App\Models\Question::where('id', $evaluation->question_id)->first();
+        $answer = \App\Models\Answer::where('id', $evaluation->answer_id)->first();
+        $test = \App\Models\Test::where('id', $evaluation->test_id)->first();
+        $feedback = \App\Models\Feedback::where('analyze_id', $evaluation->id)->first();
+
+        /* dd('feedback', $feedback); */
+
+        /* dd($evaluation, $question, $answer, $test); */
+
+        return view('pages.student.evaluation_detail', [
+            'title' => "Evaluation Detail",
+            'user' => $user,
+            'evaluation' => $evaluation,
+            'question' => $question,
+            'answer' => $answer,
+            'test' => $test,
+            'feedback' => $feedback,
+        ]);
+    }
+
+    /* setting page */
+    public function teacher_settings()
+    {
+        $user = Auth::user();
+        return view('pages.teacher.setting', [
+            'title' => "Setting",
+            'user' => $user,
         ]);
     }
 }

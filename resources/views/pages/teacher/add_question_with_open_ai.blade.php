@@ -20,12 +20,6 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    {{-- Sub Title --}}
-                    {{-- <div class="d-sm-flex align-items-center justify-content-between pt-2 mt-4 mb-4">
-                        <h1 class="h3 mb-0 text-gray-800 ">Add Item</h1>
-                    </div> --}}
-
                     <!-- Content Row -->
                     <div class="row">
 
@@ -41,13 +35,6 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
 
-                                    {{-- {{ $this_item->user->nama_lengkap }}
-                                    {{ $this_item->produk_green->nama }}
-                                    {{ $this_item->total_bayar }}
-                                    {{ $this_item->jenis_transaksi }}
-                                    {{ $this_item->tanggal }}
-                                    {{ $this_item->status }} --}}
-
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
                                             <ul>
@@ -60,8 +47,6 @@
 
                                     <form action="{{ route('teacher.tests.store_question') }}" method="POST">
                                         @csrf
-                                        {{-- {{ $this_item->id }} --}}
-                                        {{-- <input type="hidden" name="id" value="{{ $this_item->id }}"> --}}
 
                                         <div class="row d-flex">
                                             <div class="col-sm-1 form-outline mb-4">
@@ -82,7 +67,6 @@
                                                             <option value="{{ $item->id }}">
                                                                 {{ $item->id }}
                                                             </option>
-
                                                         @endif
                                                     @endforeach
                                                 </select>
@@ -107,13 +91,17 @@
                                                     }
 
                                                     .form-label {
-                                                        color: #d4d4d4; /* Label color */
-                                                        font-family: Arial, sans-serif; /* Label font family */
-                                                        font-size: 14px; /* Label font size */
+                                                        color: #d4d4d4;
+                                                        /* Label color */
+                                                        font-family: Arial, sans-serif;
+                                                        /* Label font family */
+                                                        font-size: 14px;
+                                                        /* Label font size */
                                                     }
 
                                                     .text-grey {
-                                                        color: #a0a0a0; /* Grey text color */
+                                                        color: #a0a0a0;
+                                                        /* Grey text color */
                                                     }
                                                 </style>
                                                 <label class="form-label">Key Answer
@@ -123,6 +111,18 @@
                                                 </label>
                                                 <textarea name="key_answer" style="display: none;"></textarea>
                                                 <div id="editor"></div>
+
+                                                {{-- form to regerate key answer --}}
+                                                <label class="form-label pt-3">Correction</label>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="" href="javascript:void(0);" onclick="showForm()">
+                                                            <button type="button" class="btn btn-primary">Regenerate?</button>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+
 
                                                 <label class="form-label pt-3">Key Word<span>
                                                         <p class="text-grey" style="font-size: 12px">*seperate key word with
@@ -138,13 +138,14 @@
                                         <!-- Submit button -->
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('teacher.debug.input_question') }}"
-                                                    class="btn btn-lg mt-2 px-5 mb-4"
-                                                    style="background-color: #F9FAFC; width:100%">Cancel</a>
+                                                {{-- previus page --}}
+                                                <a href="{{ redirect()->back()->getTargetUrl() }}""
+                                                    class="btn btn-lg mt-2 px-5 mb-4" style="background-color: #F9FAFC; width:100%">Cancel</a>
                                             </div>
                                             <div class="col">
                                                 <button class="btn btn-lg mt-2 px-5 mb-4 text-light"
-                                                    style="background-color: #4FBEAB; width:100%" type="submit">Create</button>
+                                                    style="background-color: #4FBEAB; width:100%"
+                                                    type="submit">Create</button>
                                             </div>
                                         </div>
                                     </form>
@@ -161,6 +162,23 @@
 
                 </div>
                 <!-- /.container-fluid -->
+                <div id="formOverlay" class="overlay hidden">
+                    <div class="form-container">
+                        <form action="{{ route('teacher.tests.add_question_openai', ['id' => $thistest->id]) }}" method="GET">
+                            @csrf
+
+                            <input type="hidden" name="question" value="{{ $question }}">
+                            <div class="form-group">
+                                <label for="comment">Comment</label>
+                                <input type="text" id="comment" name="comment" class="form-control">
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-secondary" onclick="hideForm()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
             </div>
             <!-- End of Main Content -->
@@ -188,6 +206,33 @@
             searching: false,
             paging: false,
             info: false
+        });
+    </script> --}}
+
+    <script>
+        document.getElementById('updateButton').addEventListener('click', function() {
+            document.getElementById('updateForm').submit();
+        });
+    </script>
+
+    <script>
+        function showForm() {
+            document.getElementById('formOverlay').classList.remove('hidden');
+        }
+
+        function hideForm() {
+            document.getElementById('formOverlay').classList.add('hidden');
+        }
+    </script>
+    {{-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const editor = document.getElementById('editor');
+            const textarea = document.querySelector('textarea[name="key_answer"]');
+
+            form.addEventListener('submit', function (event) {
+                textarea.value = editor.innerText; // atau gunakan editor.innerHTML jika perlu HTML
+            });
         });
     </script> --}}
 @endsection

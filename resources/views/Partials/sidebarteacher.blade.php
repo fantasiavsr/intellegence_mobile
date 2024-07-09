@@ -105,6 +105,22 @@
         </a>
     </li>
 
+    <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
+        <a class="nav-link " href="{{ route('teacher.topic') }}"
+            @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
+            <i class="fas fa-fw fa-check"></i>
+            <span>Topics</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ (request()->is('admin-user')) ? 'active' : '' }}">
+        <a class="nav-link " href="{{ route('teacher.topic') }}"
+            @if ($title === 'Admin - List User') style="color: #4FBEAB; background-color:#F9FAFC;  border-right: 8px solid #4FBEAB;" @endif>
+            <i class="fas fa-fw fa-check"></i>
+            <span>Dashboard Mahasiswa</span>
+        </a>
+    </li>
+
     {{-- <!-- Nav Item - Transaksi -->
     <li
         class="nav-item {{ (request()->is('transaksi*')) ? 'active' : '' }}">
@@ -143,7 +159,7 @@
 
     <!-- Nav Item - Pengaturan -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{ route('teacher.settings') }}">
             <i class="fas fa-fw fa-wrench"></i>
             <span>Pengaturan</span>
         </a>

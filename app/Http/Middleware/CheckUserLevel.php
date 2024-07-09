@@ -26,7 +26,7 @@ class CheckUserLevel
         $user = Auth::user();
         if ($user->level !== $level) {
             // If user level does not match, redirect to home or error page
-            return redirect('/home');
+            return redirect('/');
         }
 
         return $next($request);

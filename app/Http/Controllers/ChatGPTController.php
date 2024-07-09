@@ -73,6 +73,7 @@ class ChatGPTController extends Controller
 
             $thisanswer = $answer->answer;
             $thisquestion = $question->question;
+            /* kode kunci */
             $thisanalyze_stdout = $evaluation->analyze_stdout;
 
             $content = <<<EOT
@@ -85,7 +86,7 @@ class ChatGPTController extends Controller
             error:
             $thisanalyze_stdout
 
-            berikan saran perbaikan dari jawaban terhadap soal dan error yang diberikan
+            berikan saran perbaikan dari jawaban terhadap soal dan error yang diberikan (cek juga apakah jawaban sudah menjawab soal)
             EOT;
 
             /* dd($content); */
@@ -107,7 +108,13 @@ class ChatGPTController extends Controller
             $flight->feedback = $feedback;
             $flight->save();
 
-            return redirect()->route('teacher.debug.evaluation.detail', ['id' => $data['analyze_id']]);
+            /* return redirect()->route('teacher.debug.evaluation.detail', ['id' => $data['analyze_id']]); */
+            /* if check user teacher */
+            if (Auth::user()->level == 'teacher') {
+                return redirect()->route('teacher.debug.evaluation.detail', ['id' => $data['analyze_id']]);
+            } else {
+                return redirect()->route('student.evaluation.detail', ['id' => $data['analyze_id']]);
+            }
         }
 
         $flight = new \App\Models\Feedback();
@@ -153,7 +160,13 @@ class ChatGPTController extends Controller
         $flight->feedback = $feedback;
         $flight->save();
 
-        return redirect()->route('teacher.debug.evaluation.detail', ['id' => $data['analyze_id']]);
+       /*  return redirect()->route('teacher.debug.evaluation.detail', ['id' => $data['analyze_id']]); */
+        /* if check user teacher */
+        if (Auth::user()->level == 'teacher') {
+            return redirect()->route('teacher.debug.evaluation.detail', ['id' => $data['analyze_id']]);
+        } else {
+            return redirect()->route('student.evaluation.detail', ['id' => $data['analyze_id']]);
+        }
     }
 
     /* teacher_tests_add_question_openai page */
@@ -165,13 +178,19 @@ class ChatGPTController extends Controller
 
         $data = request()->validate([
             'question' => 'required',
+            'comment' => 'nullable',
         ]);
 
         $question = $data['question'];
+        /* check if comment null replace with "" */
+        $comment = $data['comment'] ?? "";
 
         $content = <<<EOT
-        buatkan kunci jawabwan berupa kode dart untuk soal berikut ini (langsung jawab dengan kode jangan perlu dijelaskan):
+        buatkan kunci jawaban berupa kode dart untuk soal berikut ini (langsung jawab dengan kode jangan perlu dijelaskan)(lengkap dengan import, void main, stateless/stateful widget, dan build)
+        (dart version 3.0.5):
         $question
+
+        $comment
         EOT;
 
         $response = $this->httpClient->post('chat/completions', [
@@ -188,6 +207,8 @@ class ChatGPTController extends Controller
         // Menggunakan ekspresi reguler untuk mengekstrak kode Dart
         preg_match('/```dart(.*?)```/s', $result, $matches);
         $dartCode = trim($matches[1]);
+
+        /* $dartCode = "import 'package:flutter/material.dart'"; */
 
         /* dd($dartCode); */
         return view('pages.teacher.add_question_with_open_ai', [

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ChatGPTController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\Android;
+use App\Http\Controllers\Hasil2Controller;
 
 
 /*
@@ -17,9 +20,9 @@ use App\Http\Controllers\ChatGPTController;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 Route::get('/test', [Controller::class, 'test'])->name('test');
 Route::get('/chat', [App\Http\Controllers\ChatGPTController::class, 'askToChatGpt']);
@@ -27,7 +30,7 @@ Route::get('/analyze', [App\Http\Controllers\Controller::class, 'executePythonSc
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* Route::get('/pages/student/home', function () {
     return view('pages.student.home');
@@ -106,7 +109,43 @@ Route::get('/pages/teacher/tests/evaluations/{id}', [Controller::class, 'teacher
 /* student */
 /* student test list */
 Route::get('/pages/student/tests', [Controller::class, 'student_tests'])->name('student.tests')->middleware('checkUserLevel:student');
+/* student test question */
+Route::get('/pages/student/tests/{id}', [Controller::class, 'student_tests_question'])->name('student.tests.question')->middleware('checkUserLevel:student');
+/* answer question */
+Route::get('/pages/student/fill_question/{id}', [Controller::class, 'student_fill_question'])->name('student.fill_question')->middleware('checkUserLevel:student');
+Route::post('/pages/student/add_answer', [Controller::class, 'student_store_answer'])->name('student.add_answer.store')->middleware('checkUserLevel:student');
+Route::post('/pages/student/answer_question', [Controller::class, 'student_store_evaluation'])->name('student.evaluation.store')->middleware('checkUserLevel:student');
+/* test evaluation page */
+Route::get('/pages/student/tests/evaluations/{id}', [Controller::class, 'student_tests_evaluation'])->name('student.tests.evaluation')->middleware('checkUserLevel:student');
+/* evaluation detail */
+Route::get('/pages/student/evaluations/{id}', [Controller::class, 'student_evaluation_detail'])->name('student.evaluation.detail')->middleware('checkUserLevel:student');
 
 /* evaluate chatgpt */
 /* post */
 Route::post('/pages/teacher/debug/evaluations', [ChatGPTController::class, 'answer_evaluate'])->name('answer.evaluate');
+
+
+/* topic */
+Route::get('/pages/teacher/topic', [App\Http\Controllers\Android::class, 'topic'])->name('teacher.topic');
+/* topic task */
+Route::get('/pages/teacher/topic/task/{id}', [App\Http\Controllers\Android::class, 'task'])->name('teacher.topic.task');
+/* task answer */
+Route::get('/pages/teacher/topic/task/answer/{id}', [App\Http\Controllers\Android::class, 'task_answer'])->name('teacher.topic.task.answer');
+
+Route::get('/pdf/{id}', [PDFController::class, 'show'])->name('pdf.show');
+
+/* calculateAndStoreErrorAverages */
+Route::get('/calculateAndStoreErrorAverages', [App\Http\Controllers\Android::class, 'calculateAndStoreErrorAverages'])->name('calculateAndStoreErrorAverages');
+
+Route::post('/hasil2', [Hasil2Controller::class, 'store']);
+
+/* Setting Page */
+Route::get('/pages/teacher/settings', [Controller::class, 'teacher_settings'])->name('teacher.settings')->middleware('checkUserLevel:teacher');
+
+Route::post('/upload-json', [Android::class, 'uploadJson'])->name('upload.json');
+
+/* New Web Page Student Learning*/
+Route::get('/pages/student/learning', [Android::class, 'student_learning'])->name('student.learning')->middleware('checkUserLevel:student');
+Route::get('/pages/student/learning_detail', [Android::class, 'student_learning_detail'])->name('student.learning.detail')->middleware('checkUserLevel:student');
+Route::get('/pages/student/learning_detail_task/{id}', [Android::class, 'student_learning_detail_task'])->name('student.learning.detail.task')->middleware('checkUserLevel:student');
+

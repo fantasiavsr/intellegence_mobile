@@ -49,11 +49,12 @@
                                                     <th>Test ID</th>
                                                     <th>Question ID</th>
                                                     <th>Answer ID</th>
+                                                    <th>Name</th>
                                                     <th>Error Count</th>
-                                                    <th>Error Penalty</th>
-                                                    <th>Diff Penalty</th>
                                                     <th>Missing Keyword</th>
+                                                    <th>Error Penalty</th>
                                                     <th>Word Penalty</th>
+                                                    <th>Diff Penalty</th>
                                                     <th>Total Penalty</th>
                                                     <th>Score</th>
                                                     <th>Detail</th>
@@ -82,19 +83,25 @@
                                                             {{ $item->answer_id }}
                                                         </td>
                                                         <td>
+                                                            @php
+                                                                $user = App\Models\User::where('id', $item->user_id)->first();
+                                                                echo $user->name;
+                                                            @endphp
+                                                        </td>
+                                                        <td>
                                                             {{ $item->analyze_error_count }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->analyze_penalty }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $item->differences_penalty }}
                                                         </td>
                                                         <td>
                                                             {{ $item->missing_keywords }}
                                                         </td>
                                                         <td>
+                                                            {{ $item->analyze_penalty }}
+                                                        </td>
+                                                        <td>
                                                             {{ $item->keyword_penalty }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $item->differences_penalty }}
                                                         </td>
                                                         <td>
                                                             {{ $item->total_penalty }}

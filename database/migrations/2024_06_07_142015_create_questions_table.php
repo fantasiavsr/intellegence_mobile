@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('test_id')->nullable();
-            $table->string('question');
+            $table->text('question');
             $table->text('key_answer')->nullable();
             $table->text('code_path')->nullable();
             $table->text('key_word')->nullable();
