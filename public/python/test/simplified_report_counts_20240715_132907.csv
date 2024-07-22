@@ -1,0 +1,63 @@
+testid,status,report,count
+24,FAILED,1. checkActivityName -> PASSED -> Success,17
+24,FAILED,2. checkAppName -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,3. checkPackageName -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,4. checkTargetDevice -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,5. checkActivityParent -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,6. checkMinimumSDK -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,7. checkLayoutName -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,ERROR,"FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugResources'.
+> A failure occurred while executing com.android.build.gradle.internal.tasks.Workers$ActionFacade
+   > Android resource linking failed
+     /app/src/main/res/layout/activity_main.xml:344: AAPT: error: resource drawable/formula (aka org.aplas.basicapp:drawable/formula) not found.
+         
+
+* VALIDATION RESULT :
+Uploaded resource file(s) was failed to build as Android project",16
+25,FAILED,1. check_01_String_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,22
+25,FAILED,2. check_02_Color_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,22
+25,FAILED,3. check_03_Font_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,22
+26,FAILED,1. check_01_Layout_Specification -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,19
+26,FAILED,2. check_02_TextView_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,19
+26,FAILED,3. check_03_Button_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,19
+27,FAILED,1. check_01_Space_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+27,FAILED,2. check_02_ChildLayout_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+28,FAILED,1. check_01_StringArray_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+29,FAILED,1. check_01_EditText_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,34
+29,FAILED,2. check_02_Spinner_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,34
+29,FAILED,3. check_03_TextView_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,34
+29,FAILED,4. check_04_EditText_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,34
+29,FAILED,5. check_05_Spinner_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,34
+30,FAILED,1. check_01_ChildLayout_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,18
+30,FAILED,2. check_02_Checkbox_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,18
+30,FAILED,3. check_03_Checkbox_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,18
+31,FAILED,1. check_01_RadioGroup_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+31,FAILED,2. check_02_RadioButton_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+31,FAILED,3. check_03_RadioButton_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+31,FAILED,4. check_04_RadioButton_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+32,FAILED,1. check_01_Image_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+33,FAILED,1. check_01_ImageView_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,44
+34,FAILED,1. check_01_Drawable_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+35,FAILED,1. check_01_TableLayout_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,23
+35,FAILED,2. check_02_TableRow_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,23
+35,FAILED,3. check_03_TableRow_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,23
+35,FAILED,4. check_04_TableRow_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,23
+35,FAILED,6. check_05_ImageFormula_Properties -> FAILED -> android.content.res.Resources$NotFoundException: Unable to find resource ID #0x0,1
+35,FAILED,5. check_05_ImageFormula_Properties -> FAILED -> java.lang.AssertionError: ImageView imgFormula is not found,3
+37,FAILED,1. check_01_Structure -> FAILED -> java.lang.AssertionError: Method number is wrong expected:<9> but was:<10>,1
+37,FAILED,2. check_02_Methods -> FAILED -> java.lang.AssertionError: Wrong setInch Method expected:<836993.1857893827> but was:<83.69927338133063>,1
+39,FAILED,1. check_04_strResult -> FAILED -> org.junit.ComparisonFailure: Test of rounded string conversion is failed!! expected:<4306.78[32]> but was:<4306.78[]>,1
+39,FAILED,2. check_03_convertUnit -> FAILED -> java.lang.AssertionError: Test of converting temperature is failed!! expected:<1674.9393390593575> but was:<1185.8940772551987>,1
+41,FAILED,1. check_01_StringArray_Distance -> FAILED -> org.junit.ComparisonFailure: String array distList value is not valid expected:<Mtr;Inc;Mil;Ft[];> but was:<Mtr;Inc;Mil;Ft[s];>,1
+41,FAILED,2. check_02_StringArray_Weight -> FAILED -> org.junit.ComparisonFailure: String array weightList value is not valid expected:<Grm[;Onc];Pnd;> but was:<Grm[s;Oncs];Pnd;>,1
+41,FAILED,3. check_03_Image_Resources -> PASSED -> Success,1
+42,FAILED,1. check_01_RadioGroupChange -> FAILED -> org.junit.ComparisonFailure: ( oriList - AppCompatSpinner ) Element spinner content is not suitable expected:<Mtr;Inc;Mil;Ft[];> but was:<Mtr;Inc;Mil;Ft[s];>,2
+43,FAILED,1. check_01_DistanceCase -> FAILED -> org.junit.ComparisonFailure: doConvert in Distance is wrong expected:<193333.3[3952]> but was:<193333.3[4]>,2
+43,FAILED,2. check_02_WeightCase -> PASSED -> Success,2
+43,FAILED,3. check_03_TemperatureCase -> PASSED -> Success,2
+44,FAILED,1. check_01_Events -> FAILED -> org.junit.ComparisonFailure: Event convList spinner change is wrong in temperature convert expected:<[273.15]> but was:<[0]>,4
+46,FAILED,1. check_01_ImageView_Properties -> FAILED -> java.lang.AssertionError: ( imgFormula - AppCompatImageView ) Element top margin is not suitable expected:<2> but was:<22>,4
+46,FAILED,2. check_02_FormulaBox_Event -> PASSED -> Success,4

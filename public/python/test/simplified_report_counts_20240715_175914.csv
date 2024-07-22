@@ -1,0 +1,381 @@
+testid,status,report,count
+24,FAILED,2. checkAppName -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,5. checkActivityParent -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,6. checkMinimumSDK -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,7. checkLayoutName -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+24,FAILED,3. checkPackageName -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,16
+24,FAILED,1. checkActivityName -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,16
+24,FAILED,4. checkTargetDevice -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,15
+25,FAILED,1. check_01_String_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,21
+25,FAILED,2. check_02_Color_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,19
+25,FAILED,3. check_03_Font_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+26,FAILED,3. check_03_Button_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,19
+26,FAILED,2. check_02_TextView_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,18
+26,FAILED,1. check_01_Layout_Specification -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+27,FAILED,1. check_01_Space_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+27,FAILED,2. check_02_ChildLayout_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+28,FAILED,1. check_01_StringArray_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+29,FAILED,2. check_02_Spinner_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,33
+29,FAILED,5. check_05_Spinner_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,22
+29,FAILED,1. check_01_EditText_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,20
+29,FAILED,3. check_03_TextView_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,18
+29,FAILED,4. check_04_EditText_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,18
+30,FAILED,2. check_02_Checkbox_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,18
+30,FAILED,1. check_01_ChildLayout_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+30,FAILED,3. check_03_Checkbox_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+31,FAILED,1. check_01_RadioGroup_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+31,FAILED,2. check_02_RadioButton_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+31,FAILED,3. check_03_RadioButton_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+31,FAILED,4. check_04_RadioButton_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+32,FAILED,1. check_01_Image_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+33,FAILED,1. check_01_ImageView_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,44
+34,FAILED,1. check_01_Drawable_Resources -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,17
+35,FAILED,2. check_02_TableRow_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,20
+35,FAILED,3. check_03_TableRow_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,20
+35,FAILED,4. check_04_TableRow_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,20
+35,FAILED,1. check_01_TableLayout_Properties -> FAILED -> android.view.InflateException: Binary XML file line #21: Binary XML file line #21: Error inflating class androidx.appcompat.widget.AppCompatButton,19
+35,FAILED,5. check_05_ImageFormula_Properties -> FAILED -> java.lang.AssertionError: ImageView imgFormula is not found,3
+35,FAILED,6. check_05_ImageFormula_Properties -> FAILED -> android.content.res.Resources$NotFoundException: Unable to find resource ID #0x0,1
+37,FAILED,1. check_01_Structure -> FAILED -> java.lang.AssertionError: Method number is wrong expected:<9> but was:<10>,1
+37,FAILED,2. check_02_Methods -> FAILED -> java.lang.AssertionError: Wrong setInch Method expected:<836993.1857893827> but was:<83.69927338133063>,1
+39,FAILED,1. check_04_strResult -> FAILED -> org.junit.ComparisonFailure: Test of rounded string conversion is failed!! expected:<4306.78[32]> but was:<4306.78[]>,1
+39,FAILED,2. check_03_convertUnit -> FAILED -> java.lang.AssertionError: Test of converting temperature is failed!! expected:<1674.9393390593575> but was:<1185.8940772551987>,1
+41,FAILED,1. check_01_StringArray_Distance -> FAILED -> org.junit.ComparisonFailure: String array distList value is not valid expected:<Mtr;Inc;Mil;Ft[];> but was:<Mtr;Inc;Mil;Ft[s];>,1
+41,FAILED,2. check_02_StringArray_Weight -> FAILED -> org.junit.ComparisonFailure: String array weightList value is not valid expected:<Grm[;Onc];Pnd;> but was:<Grm[s;Oncs];Pnd;>,1
+42,FAILED,1. check_01_RadioGroupChange -> FAILED -> org.junit.ComparisonFailure: ( oriList - AppCompatSpinner ) Element spinner content is not suitable expected:<Mtr;Inc;Mil;Ft[];> but was:<Mtr;Inc;Mil;Ft[s];>,2
+43,FAILED,1. check_01_DistanceCase -> FAILED -> org.junit.ComparisonFailure: doConvert in Distance is wrong expected:<193333.3[3952]> but was:<193333.3[4]>,2
+43,FAILED,2. check_02_WeightCase -> FAILED -> org.junit.ComparisonFailure: doConvert in Weight is wrong expected:<[76.]0> but was:<[]0>,1
+43,FAILED,3. check_03_TemperatureCase -> FAILED -> org.junit.ComparisonFailure: doConvert in Temperature is wrong expected:<[573.]0> but was:<[]0>,1
+44,FAILED,1. check_01_Events -> FAILED -> org.junit.ComparisonFailure: Event convList spinner change is wrong in temperature convert expected:<[273.15]> but was:<[0]>,4
+46,FAILED,1. check_01_ImageView_Properties -> FAILED -> java.lang.AssertionError: ( imgFormula - AppCompatImageView ) Element top margin is not suitable expected:<2> but was:<22>,3
+46,FAILED,2. check_02_FormulaBox_Event -> FAILED -> java.lang.NullPointerException at org.aplas.basicapp.MainActivity$6.onCheckedChanged(MainActivity.java:117) at android.widget.CompoundButton.setChecked(CompoundButton.java:171),2
+47,FAILED,5. checkMyActivityParentClass -> FAILED -> org.junit.ComparisonFailure: MyActivity Parent Class is Wrong expected:<A[]ctivity> but was:<A[ppCompatA]ctivity>,4
+48,FAILED,1. checkAppTheme -> FAILED -> java.lang.AssertionError: android:textSize value is wrong expected:<-15000805> but was:<-15000645>,1
+48,FAILED,2. checkColorResources -> FAILED -> java.lang.AssertionError: Color textColor value is not valid expected:<-15000805> but was:<-15000645>,1
+49,FAILED,4. checkRoundBtnDrawable -> FAILED -> java.lang.AssertionError: Gradient Start Color value is wrong expected:<-5654574> but was:<-5589038>,1
+50,FAILED,2. check_1_TextView_appTitle -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,5
+50,FAILED,3. check_2_LinearLayout_accessBox -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,5
+50,FAILED,4. check_3_LinearLayout_colorBox -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,5
+50,FAILED,5. check_4_RelativeLayout_buttonBox1 -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,5
+50,FAILED,7. check_6_RelativeLayout_buttonBox2 -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,5
+50,FAILED,8. check_7_LinearLayout_scoreBox -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,5
+50,FAILED,9. check_8_LinearLayout_progressBox -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,5
+50,FAILED,1. check_0_Layout_mainLayout -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,4
+50,FAILED,6. check_5_Space -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class android.widget.TextView> but was:<class android.support.v7.widget.AppCompatTextView>,4
+51,FAILED,2. check_02_Incorrect_Password -> FAILED -> java.lang.AssertionError: scoreBox Visibility should be INVISIBLE expected:<4> but was:<0>,1
+51,FAILED,3. check_03_Correct_Password -> FAILED -> org.junit.ComparisonFailure: Toast message is wrong expected:<Login Success[]> but was:<Login Success[!!]>,1
+55,FAILED,"1. check_01_Before_Game -> FAILED -> org.junit.ComparisonFailure: clrText text should be """" expected:<[]> but was:<[Blue]>",1
+55,FAILED,"2. check_02_Right_Answer -> FAILED -> org.junit.ComparisonFailure: When finished, timer value should be ""COMPLETE"" expected:<[COMPLETE]> but was:<[3:0]>",1
+57,FAILED,1. checkActivityName -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+57,FAILED,2. checkAppName -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+57,FAILED,3. checkPackageName -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+57,FAILED,4. checkTargetDevice -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+57,FAILED,5. checkActivityParent -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+57,FAILED,6. checkMinimumSDK -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+57,FAILED,7. checkLayoutName -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+58,FAILED,1. check_01_String_Resources -> FAILED -> org.junit.ComparisonFailure: String btnText value is not valid expected:<Convert[]> but was:<Convert[er]>,12
+58,FAILED,2. check_02_Color_Resources -> FAILED -> java.lang.AssertionError: Color colorPrimary value is not valid expected:<-16743049> but was:<-10354450>,8
+58,FAILED,3. check_03_Font_Resources -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+59,FAILED,2. check_02_TextView_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$031$check_02_TextView_Properties FAILED,13
+59,FAILED,3. check_03_Button_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$031$check_03_Button_Properties FAILED,13
+59,FAILED,1. check_01_Layout_Specification -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$031$check_01_Layout_Specification FAILED,12
+60,FAILED,1. check_01_Space_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.ViewTest.testCompletion(ViewTest.java:30) at org.aplas.basicappx.TestA1BasicUIX041.checkCompletion(TestA1BasicUIX041.java:54),8
+60,FAILED,2. check_02_ChildLayout_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.ViewTest.testCompletion(ViewTest.java:30) at org.aplas.basicappx.TestA1BasicUIX041.checkCompletion(TestA1BasicUIX041.java:54),8
+61,FAILED,1. check_01_StringArray_Resources -> FAILED -> org.junit.ComparisonFailure: String array tempList value is not valid expected:<°C;°F;[]K;> but was:<°C;°F;[°]K;>,8
+62,FAILED,1. check_01_EditText_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,21
+62,FAILED,2. check_02_Spinner_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,16
+62,FAILED,3. check_03_TextView_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,14
+62,FAILED,4. check_04_EditText_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,12
+62,FAILED,5. check_05_Spinner_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,12
+62,FAILED,6. check_05_Spinner_Properties -> FAILED -> android.content.res.Resources$NotFoundException: Unable to find resource ID #0xffffffff,1
+63,FAILED,3. check_03_Checkbox_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX061.startActivity(TestA1BasicUIX061.java:44) at org.aplas.basicappx.TestA1BasicUIX061.initTest(TestA1BasicUIX061.java:32),12
+63,FAILED,2. check_02_Checkbox_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX061.startActivity(TestA1BasicUIX061.java:44) at org.aplas.basicappx.TestA1BasicUIX061.initTest(TestA1BasicUIX061.java:32),11
+63,FAILED,1. check_01_ChildLayout_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX061.startActivity(TestA1BasicUIX061.java:44) at org.aplas.basicappx.TestA1BasicUIX061.initTest(TestA1BasicUIX061.java:32),9
+64,FAILED,1. check_01_RadioGroup_Properties -> FAILED -> org.junit.ComparisonFailure: ( radioGrub - RadioGroup ) Element Id Name is not suitable expected:<radioGr[oup]> but was:<radioGr[ub]>,10
+64,FAILED,2. check_02_RadioButton_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX071.startActivity(TestA1BasicUIX071.java:43) at org.aplas.basicappx.TestA1BasicUIX071.initTest(TestA1BasicUIX071.java:31),9
+64,FAILED,3. check_03_RadioButton_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX071.startActivity(TestA1BasicUIX071.java:43) at org.aplas.basicappx.TestA1BasicUIX071.initTest(TestA1BasicUIX071.java:31),9
+64,FAILED,4. check_04_RadioButton_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX071.startActivity(TestA1BasicUIX071.java:43) at org.aplas.basicappx.TestA1BasicUIX071.initTest(TestA1BasicUIX071.java:31),8
+65,FAILED,1. check_01_Image_Resources -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+66,FAILED,1. check_01_ImageView_Properties -> FAILED -> java.lang.AssertionError: ( img - AppCompatImageView ) Element width is not suitable expected:<89> but was:<-1>,50
+68,FAILED,1. check_01_Drawable_Resources -> FAILED -> android.view.InflateException: Binary XML file line #14: Binary XML file line #14: Error inflating class android.support.v7.widget.AppCompatTextView,2
+69,FAILED,5. check_05_ImageFormula_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX092.startActivity(TestA1BasicUIX092.java:47) at org.aplas.basicappx.TestA1BasicUIX092.initTest(TestA1BasicUIX092.java:34),18
+69,FAILED,2. check_02_TableRow_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX092.startActivity(TestA1BasicUIX092.java:47) at org.aplas.basicappx.TestA1BasicUIX092.initTest(TestA1BasicUIX092.java:34),17
+69,FAILED,4. check_04_TableRow_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX092.startActivity(TestA1BasicUIX092.java:47) at org.aplas.basicappx.TestA1BasicUIX092.initTest(TestA1BasicUIX092.java:34),16
+69,FAILED,3. check_03_TableRow_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX092.startActivity(TestA1BasicUIX092.java:47) at org.aplas.basicappx.TestA1BasicUIX092.initTest(TestA1BasicUIX092.java:34),14
+69,FAILED,1. check_01_TableLayout_Properties -> FAILED -> java.lang.NullPointerException at org.aplas.basicappx.TestA1BasicUIX092.startActivity(TestA1BasicUIX092.java:47) at org.aplas.basicappx.TestA1BasicUIX092.initTest(TestA1BasicUIX092.java:34),12
+71,FAILED,1. check_02_Methods -> FAILED -> java.lang.AssertionError: Wrong convert Method expected:<1302.984361680305> but was:<33.09578491495589>,1
+72,FAILED,1. check_02_Methods -> FAILED -> java.lang.AssertionError: Wrong setOunce Method expected:<25301.296945763526> but was:<25301.32421624523>,3
+73,FAILED,1. check_03_convertUnit -> FAILED -> java.lang.AssertionError: Test of converting distance is failed!! expected:<4578.831835725828> but was:<0.0>,6
+73,FAILED,2. check_01_Fields_Availability -> FAILED -> java.lang.AssertionError: Field <dist> must be Constructed at org.junit.Assert.fail(Assert.java:88),2
+73,FAILED,4. check_04_strResult -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$041$check_04_strResult FAILED,1
+73,FAILED,3. check_03_convertUnit -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$041$check_03_convertUnit FAILED,1
+74,FAILED,2. check_02_onStart -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$051$check_02_onStart FAILED,5
+74,FAILED,1. check_01_onCreate -> FAILED -> org.junit.ComparisonFailure: imgView must be assigned to img element expected:<img[]> but was:<img[Formula]>,3
+75,FAILED,1. check_01_StringArray_Distance -> FAILED -> android.view.InflateException: Binary XML file line #36: Binary XML file line #36: Error inflating class androidx.legacy.widget.Space,1
+75,FAILED,2. check_02_StringArray_Weight -> FAILED -> android.view.InflateException: Binary XML file line #36: Binary XML file line #36: Error inflating class androidx.legacy.widget.Space,1
+75,FAILED,3. check_03_Image_Resources -> FAILED -> android.view.InflateException: Binary XML file line #36: Binary XML file line #36: Error inflating class androidx.legacy.widget.Space,1
+76,FAILED,1. check_01_RadioGroupChange -> FAILED -> org.junit.ComparisonFailure: ( oriList - AppCompatSpinner ) Element spinner content is not suitable expected:<[Mtr;Inc;Mil;Ft];> but was:<[°C;°F;K];> -> 1 seconds,29
+77,FAILED,1. check_01_DistanceCase -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 3 -> 1 seconds,28
+77,FAILED,2. check_02_WeightCase -> FAILED -> org.junit.ComparisonFailure: doConvert in Weight is wrong expected:<[0]> but was:<[273.15]> -> 1 seconds,26
+77,FAILED,3. check_03_TemperatureCase -> FAILED -> android.view.InflateException: Binary XML file line #36: Binary XML file line #36: Error inflating class androidx.legacy.widget.Space,1
+78,FAILED,1. check_01_Events -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 3 -> 1 seconds,38
+79,FAILED,1. check_01_Image_Resources -> FAILED -> android.view.InflateException: Binary XML file line #36: Binary XML file line #36: Error inflating class androidx.legacy.widget.Space,1
+80,FAILED,2. check_02_FormulaBox_Event -> FAILED -> java.lang.AssertionError: ( imgFormula - AppCompatImageView ) Element visibility is not suitable expected:<0> but was:<4> -> 1 seconds,29
+80,FAILED,1. check_01_ImageView_Properties -> FAILED -> java.lang.AssertionError: Element 8 is not suitable expected:<class androidx.appcompat.widget.AppCompatImageView> but was:<class android.widget.ImageView>,3
+83,FAILED,5. checkMyActivityParentClass -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+83,FAILED,4. checkMinimumSDK -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+84,FAILED,1. checkAppTheme -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,3
+84,FAILED,4. checkStringResources -> FAILED -> org.junit.ComparisonFailure: String keyword value is not valid expected:<[quiz@123]> but was:<[agussalimh]>,1
+84,FAILED,3. checkStringArrayResources -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+85,FAILED,1. checkColoredButton -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,2
+85,FAILED,2. checkProgressBar -> FAILED -> java.lang.AssertionError: android:minHeight value is wrong expected:<18> but was:<20>,1
+85,FAILED,4. checkRoundBtnDrawable -> FAILED -> java.lang.AssertionError: Gradient Start Color value is wrong expected:<-5654574> but was:<-9436250>,1
+86,FAILED,12. check_7_1_scoreBox_Components -> FAILED -> java.lang.AssertionError: ( scoreText - AppCompatTextView ) Element gravity orientation is not suitable expected:<17> but was:<8388659>,9
+86,FAILED,14. check_8_1_progressBox_Components -> FAILED -> java.lang.NullPointerException at org.aplas.colorgamex.ViewTest.testCompletion(ViewTest.java:27) at org.aplas.colorgamex.TestB2XSingle.B2X$031$check_8_1_progressBox_Components(TestB2XSingle.java:650) [in 900 ms],7
+86,FAILED,5. check_3_1_colorBox_Components -> FAILED -> org.junit.ComparisonFailure: ( clrText - AppCompatTextView ) Element text string is not suitable expected:<[]> but was:<[Purple]>,6
+86,FAILED,3. check_2_1_accessBox_Components -> FAILED -> org.junit.ComparisonFailure: ( appCode - AppCompatEditText ) Element hint text is not suitable expected:<Enter [p]assword here!> but was:<Enter [P]assword here!> [in 1000 ms],6
+86,FAILED,6. check_3_LinearLayout_colorBox -> FAILED -> java.lang.AssertionError: 4 Element(s) was missing [in 999 ms],6
+86,FAILED,7. check_4_1_buttonBox1_Components -> FAILED -> java.lang.ClassCastException: android.widget.LinearLayout cannot be cast to android.widget.RelativeLayout [in 900 ms],6
+86,FAILED,10. check_6_1_buttonBox2_Components -> FAILED -> java.lang.NullPointerException at org.aplas.colorgamex.ViewTest.testCompletion(ViewTest.java:27) at org.aplas.colorgamex.TestB2XSingle.B2X$031$check_6_1_buttonBox2_Components(TestB2XSingle.java:503) [in 1000 ms],6
+86,FAILED,1. check_0_Layout_mainLayout -> FAILED -> java.lang.AssertionError: 4 Element(s) was missing [in 1200 ms],5
+86,FAILED,8. check_4_RelativeLayout_buttonBox1 -> FAILED -> java.lang.ClassCastException: android.widget.LinearLayout cannot be cast to android.widget.RelativeLayout [in 1000 ms],3
+86,FAILED,9. check_5_Space -> FAILED -> java.lang.NullPointerException at org.aplas.colorgamex.ElementTest.<init>(ElementTest.java:32) at org.aplas.colorgamex.TestB2XSingle.B2X$031$check_5_Space(TestB2XSingle.java:466) [in 1000 ms],3
+86,FAILED,11. check_6_RelativeLayout_buttonBox2 -> FAILED -> java.lang.NullPointerException at org.aplas.colorgamex.ElementTest.<init>(ElementTest.java:32) at org.aplas.colorgamex.TestB2XSingle.B2X$031$check_6_RelativeLayout_buttonBox2(TestB2XSingle.java:481) [in 900 ms],3
+86,FAILED,13. check_7_LinearLayout_scoreBox -> FAILED -> java.lang.NullPointerException at org.aplas.colorgamex.ElementTest.<init>(ElementTest.java:32) at org.aplas.colorgamex.TestB2XSingle.B2X$031$check_7_LinearLayout_scoreBox(TestB2XSingle.java:552) [in 1000 ms],3
+86,FAILED,15. check_8_LinearLayout_progressBox -> FAILED -> java.lang.NullPointerException at org.aplas.colorgamex.ElementTest.<init>(ElementTest.java:32) at org.aplas.colorgamex.TestB2XSingle.B2X$031$check_8_LinearLayout_progressBox(TestB2XSingle.java:625) [in 1000 ms],3
+86,FAILED,2. check_1_TextView_appTitle -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class androidx.appcompat.widget.AppCompatTextView> but was:<class android.widget.TextView>,3
+86,FAILED,4. check_2_LinearLayout_accessBox -> FAILED -> java.lang.AssertionError: Element 0 is not suitable expected:<class androidx.appcompat.widget.AppCompatTextView> but was:<class android.widget.TextView>,2
+87,FAILED,3. check_03_Correct_Password -> FAILED -> org.junit.ComparisonFailure: Toast message is wrong expected:<[Login Success]> but was:<[Password is wrong]>,2
+87,FAILED,2. check_02_Incorrect_Password -> FAILED -> java.lang.AssertionError: accessBox Visibility should be VISIBLE expected:<0> but was:<4>,1
+88,FAILED,"2. check_02_Countdowntimer -> FAILED -> java.lang.AssertionError: When on create, Countdowntimer should not be started",6
+89,FAILED,2. check_02_ColorData -> FAILED -> java.lang.NullPointerException at org.aplas.colorgamex.TestB2AdvancedWidgetsX061.check_02_ColorData(TestB2AdvancedWidgetsX061.java:49),6
+89,FAILED,1. check_01_Fields_Availability -> FAILED -> java.lang.AssertionError: Field initColorList is not declared or parameters is wrong!!,1
+90,FAILED,"2. check_02_Start_Game -> FAILED -> java.lang.AssertionError: clrText text should be one of [Red, Yellow, Blue, Green, Orange, Purple]",2
+90,FAILED,1. check_01_Fields_Availability -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+91,FAILED,4. check_04_No_Answer -> FAILED -> java.lang.AssertionError: clrText value should has new color after clicking color button. Actual: Red,6
+91,FAILED,"1. check_01_Before_Game -> FAILED -> org.junit.ComparisonFailure: clrText text should be """" expected:<[]> but was:<[Blue]>",5
+91,FAILED,2. check_02_Right_Answer -> FAILED -> java.lang.AssertionError: clrText value should has new color after clicking color button. Actual: Orange,5
+91,FAILED,3. check_03_Wrong_Answer -> FAILED -> java.lang.AssertionError: clrText value should has new color after clicking color button. Actual: Green,5
+93,FAILED,2. check_02_Color_Resources -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$021$check_02_Color_Resources FAILED,2
+94,FAILED,1. check_01_Layout_Specification -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$031$check_01_Layout_Specification FAILED,1
+96,FAILED,1. check_01_StringArray_Resources -> FAILED -> org.junit.ComparisonFailure: String array tempList value is not valid expected:<°C;°F;[]K;> but was:<°C;°F;[°]K;>,1
+97,FAILED,2. check_02_Spinner_Properties -> FAILED -> org.junit.ComparisonFailure: ( oriList - AppCompatSpinner ) Element spinner content is not suitable expected:<°C;°F;[]K;> but was:<°C;°F;[°]K;>,1
+97,FAILED,5. check_05_Spinner_Properties -> FAILED -> org.junit.ComparisonFailure: ( convList - AppCompatSpinner ) Element spinner content is not suitable expected:<°C;°F;[]K;> but was:<°C;°F;[°]K;>,1
+97,FAILED,1. check_01_EditText_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$052$check_01_EditText_Properties FAILED,1
+98,FAILED,2. check_02_Checkbox_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$061$check_02_Checkbox_Properties FAILED,2
+98,FAILED,3. check_03_Checkbox_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$061$check_03_Checkbox_Properties FAILED,2
+101,FAILED,1. check_01_ImageView_Properties -> FAILED -> java.lang.AssertionError: ( img - AppCompatImageView ) Element width is not suitable expected:<89> but was:<100>,12
+103,FAILED,5. check_05_ImageFormula_Properties -> FAILED -> java.lang.AssertionError: ImageView imgFormula is not found,2
+103,FAILED,1. check_01_TableLayout_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+103,FAILED,2. check_02_TableRow_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+103,FAILED,3. check_03_TableRow_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+103,FAILED,4. check_04_TableRow_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+116,FAILED,1. check_01_ImageView_Properties -> FAILED -> java.lang.AssertionError: ( img - AppCompatImageView ) Element width is not suitable expected:<89> but was:<100>,2
+118,FAILED,1. check_01_TableLayout_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+118,FAILED,2. check_02_TableRow_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+118,FAILED,3. check_03_TableRow_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+118,FAILED,4. check_04_TableRow_Properties -> FAILED -> java.lang.AssertionError: 1 Element(s) was missing,1
+136,FAILED,1. check_02_Methods -> FAILED -> java.lang.AssertionError: Wrong setOunce Method expected:<81420.62112561941> but was:<81420.70888315862>,1
+137,FAILED,1. check_02_Methods_Availability -> FAILED -> java.lang.AssertionError: Field strResult is not declared or parameters is wrong!! at org.junit.Assert.fail(Assert.java:88),1
+137,FAILED,2. check_01_Fields_Availability -> FAILED -> java.lang.AssertionError: Field <dist> must be Constructed at org.junit.Assert.fail(Assert.java:88),1
+140,FAILED,1. check_01_RadioGroupChange -> FAILED -> org.junit.ComparisonFailure: ( oriList - AppCompatSpinner ) Element spinner content is not suitable expected:<[Mtr;Inc;Mil;Ft];> but was:<[°C;°F;K];> -> 1 seconds,3
+141,FAILED,1. check_01_DistanceCase -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 3 -> 1 seconds,3
+141,FAILED,2. check_02_WeightCase -> FAILED -> org.junit.ComparisonFailure: doConvert in Weight is wrong expected:<[0]> but was:<[273.15]> -> 1 seconds,3
+142,FAILED,1. check_01_Events -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 3 -> 1 seconds,3
+144,FAILED,2. check_02_FormulaBox_Event -> FAILED -> java.lang.AssertionError: ( imgFormula - AppCompatImageView ) Element visibility is not suitable expected:<0> but was:<4> -> 1 seconds,3
+151,FAILED,4. checkRoundBtnDrawable -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+152,FAILED,7. check_4_1_buttonBox1_Components -> FAILED -> java.lang.AssertionError: ( color1 - AppCompatButton ) Element width is not suitable expected:<111> but was:<-2>,1
+152,FAILED,10. check_6_1_buttonBox2_Components -> FAILED -> java.lang.AssertionError: ( color4 - AppCompatButton ) Element width is not suitable expected:<111> but was:<-2>,1
+152,FAILED,12. check_7_1_scoreBox_Components -> FAILED -> java.lang.AssertionError: ( scoreText - AppCompatTextView ) Element gravity orientation is not suitable expected:<17> but was:<8388659>,1
+152,FAILED,14. check_8_1_progressBox_Components -> FAILED -> java.lang.AssertionError: ( startBtn - AppCompatButton ) Element text size is not suitable expected:<18.0> but was:<14.0>,1
+152,FAILED,5. check_3_1_colorBox_Components -> FAILED -> org.junit.ComparisonFailure: ( clrText - AppCompatTextView ) Element text string is not suitable expected:<[]> but was:<[Purple]>,1
+152,FAILED,13. check_7_LinearLayout_scoreBox -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+153,FAILED,2. check_02_Incorrect_Password -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+154,FAILED,"2. check_02_Countdowntimer -> FAILED -> java.lang.AssertionError: When on create, Countdowntimer should not be started",2
+155,FAILED,2. check_02_ColorData -> FAILED -> java.lang.AssertionError: Size of charList is wrong expected:<6> but was:<1>,1
+156,FAILED,"2. check_02_Start_Game -> FAILED -> java.lang.AssertionError: clrText text should be one of [Red, Yellow, Blue, Green, Orange, Purple]",1
+157,FAILED,2. check_02_Right_Answer -> FAILED -> java.lang.ArrayIndexOutOfBoundsException: 5,1
+157,FAILED,3. check_03_Wrong_Answer -> FAILED -> java.lang.AssertionError: clrText value should has new color after clicking color button. Actual:,1
+157,FAILED,4. check_04_No_Answer -> FAILED -> java.lang.AssertionError: clrText value should has new color after clicking color button. Actual:,1
+162,FAILED,2. check_02_StringResource -> FAILED -> org.junit.ComparisonFailure: String app_name value is not valid expected:<[Soccer Match]> but was:<[APLAS SOCCER BOARD]>,3
+163,FAILED,2. check_02_HomeTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=homeLabel should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 700 ms],12
+163,FAILED,1. check_01_MainTitle -> FAILED -> org.junit.ComparisonFailure: View with id=mainTitleTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 700 ms],9
+163,FAILED,3. check_03_AwayTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=awayLabel should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 600 ms],7
+163,FAILED,4. check_04_StartButton -> FAILED -> org.junit.ComparisonFailure: View with id=startBtn should be a AppCompatButton expected:<[AppCompat]Button> but was:<[Material]Button> [in 600 ms],7
+164,FAILED,1. check_01_MainTitle -> FAILED -> org.junit.ComparisonFailure: View with id=playTitleTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 600 ms],7
+164,FAILED,2. check_02_HomeTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=homeTeam should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 400 ms],7
+164,FAILED,3. check_03_AwayTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=awayTeam should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 400 ms],7
+164,FAILED,4. check_04_TimerShow -> FAILED -> org.junit.ComparisonFailure: View with id=timerShow should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 300 ms],7
+164,FAILED,5. check_05_PlayButton -> FAILED -> org.junit.ComparisonFailure: View with id=matchStartBtn should be a AppCompatButton expected:<[AppCompat]Button> but was:<[Material]Button> [in 400 ms],6
+165,FAILED,1. check_01_Contents -> FAILED -> org.junit.ComparisonFailure: View with id=matchResultTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 400 ms],6
+166,FAILED,3. check_03_Fragment_Footer -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$051$check_03_Fragment_Footer FAILED,4
+166,FAILED,4. check_03_Layout_Log -> FAILED -> org.junit.ComparisonFailure: layout_log.xml should be a CardView expected:<[LinearLayout]> but was:<[CardView]>,1
+167,FAILED,2. check_02_AddHomePlayer_ShowDialog -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$061$check_02_AddHomePlayer_ShowDialog FAILED,12
+167,FAILED,5. check_05_AddAwayPlayer_ShowDialog -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$061$check_05_AddAwayPlayer_ShowDialog FAILED,12
+167,FAILED,4. check_04_AddHomePlayer_OkButton -> FAILED -> org.junit.ComparisonFailure: (Add Player no.1) OK button in Home Player AlertDialog must has effect to add 1 player to ArrayList 'homePlayer' from EditText 'playerName' expected:<7ja9mdV6zY[]> but was:<7ja9mdV6zY[()]>,4
+167,FAILED,7. check_07_AddAwayPlayer_OkButton -> FAILED -> org.junit.ComparisonFailure: (Add Player no.1) OK button in Away Player AlertDialog must has effect to add 1 player to ArrayList 'awayPlayer' from EditText 'playerName' expected:<UMrQmu9LBI[]> but was:<UMrQmu9LBI[()]>,4
+167,FAILED,14. check_14_StartButton_Clicked_when_HomePlayer_NotComplete -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.ViewTest.getViewFromDialog(ViewTest.java:117) at org.aplas.soccermatch.ViewTest.addPlayerAction(ViewTest.java:235),3
+167,FAILED,15. check_15_StartButton_Clicked_when_AwayPlayer_NotComplete -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.ViewTest.getViewFromDialog(ViewTest.java:117) at org.aplas.soccermatch.ViewTest.addPlayerAction(ViewTest.java:235),3
+167,FAILED,16. check_16_StartButton_Clicked_when_All_Complete -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.ViewTest.getViewFromDialog(ViewTest.java:117) at org.aplas.soccermatch.ViewTest.addPlayerAction(ViewTest.java:235),3
+167,FAILED,17. check_17_StartButton_Clicked_Open_PlayActivity -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.ViewTest.getViewFromDialog(ViewTest.java:117) at org.aplas.soccermatch.ViewTest.addPlayerAction(ViewTest.java:235),3
+167,FAILED,3. check_03_AddHomePlayer_CancelButton -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.TestB3MultiActivities061.check_03_AddHomePlayer_CancelButton(TestB3MultiActivities061.java:89),2
+167,FAILED,6. check_06_AddAwayPlayer_CancelButton -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.TestB3MultiActivities061.check_06_AddAwayPlayer_CancelButton(TestB3MultiActivities061.java:198),2
+167,FAILED,"12. check_12_StartButton_Clicked_when_HomeTeamLogo_Empty -> FAILED -> org.junit.ComparisonFailure: If Home Team Logo is still empty, the Toast text should be 'Home team logo is still empty' expected:<Home [team logo] is still empty> but was:<Home [Coach name] is still empty>",1
+167,FAILED,"13. check_13_StartButton_Clicked_when_AwayTeamLogo_Empty -> FAILED -> org.junit.ComparisonFailure: If Away Team Logo is still empty, the Toast text should be 'Away team logo is still empty' expected:<[Away team logo] is still empty> but was:<[Home Coach name] is still empty>",1
+168,FAILED,4. check_04_Fragment_Content -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),10
+168,FAILED,5. check_05_StartMatch_Clicked -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+168,FAILED,6. check_06_AddHomeGoal -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+168,FAILED,7. check_07_AddAwayGoal -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+168,FAILED,8. check_08_AddHomeYellowCard -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+168,FAILED,9. check_09_AddAwayYellowCard -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+168,FAILED,10. check_10_AddHomeRedCard -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+168,FAILED,11. check_11_AddAwayRedCard -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+168,FAILED,1. check_01_Contents_onCreate -> FAILED -> org.junit.ComparisonFailure: Field 'timerTxt' should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView> [in 2000 ms],7
+168,FAILED,12. check_12_StopMatch_Clicked -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),6
+168,FAILED,2. check_02_Contents_ExtraData -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),3
+168,FAILED,3. check_03_Fragment_Activated -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),3
+168,FAILED,13. check_13_Simulate_ManyEvents -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),3
+168,FAILED,14. check_14_FinishBtn_Click -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),3
+169,FAILED,1. check_01_Contents_onCreate -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),8
+169,FAILED,3. check_03_LogView_RecyclerView -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),5
+169,FAILED,2. check_02_Header_Result -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),3
+169,FAILED,4. check_04_RestartBtn_Click -> FAILED -> java.lang.NullPointerException at org.aplas.soccermatch.PlayActivity.loadTeamData(PlayActivity.java:136) at org.aplas.soccermatch.PlayActivity.onStart(PlayActivity.java:176),3
+171,FAILED,2. check_02_HomeTeamView -> FAILED -> java.lang.AssertionError: The scaleType in AppCompatImageButton with id=addHomePlayer is should be FIT_END expected:<FIT_END> but was:<FIT_CENTER>,1
+176,FAILED,4. check_04_Fragment_Content -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_04_Fragment_Content FAILED,1
+177,FAILED,1. check_01_Contents_onCreate -> FAILED -> java.lang.RuntimeException: Unable to resolve activity for Intent { cmp=org.aplas.soccermatch/.LogActivity (has extras) },1
+177,FAILED,2. check_02_Header_Result -> FAILED -> java.lang.RuntimeException: Unable to resolve activity for Intent { cmp=org.aplas.soccermatch/.LogActivity (has extras) },1
+177,FAILED,3. check_03_LogView_RecyclerView -> FAILED -> java.lang.RuntimeException: Unable to resolve activity for Intent { cmp=org.aplas.soccermatch/.LogActivity (has extras) },1
+177,FAILED,4. check_04_RestartBtn_Click -> FAILED -> java.lang.RuntimeException: Unable to resolve activity for Intent { cmp=org.aplas.soccermatch/.LogActivity (has extras) },1
+190,FAILED,5. check_05_ImageFormula_Properties -> FAILED -> java.lang.AssertionError: ImageView 'imgFormula' is not found,1
+199,FAILED,1. check_01_Events -> FAILED -> org.junit.ComparisonFailure: Event rounded checkbox change is wrong in temperature convert expected:<[562.59444]> but was:<[630.93]>,1
+201,FAILED,2. check_02_FormulaBox_Event -> FAILED -> java.lang.AssertionError: ( imgFormula - AppCompatImageView ) Element visibility is not suitable expected:<0> but was:<4>,1
+250,FAILED,3. check_02_String_Resources -> FAILED -> org.aplas.animaltour.TestB4Single > B4$011$check_02_String_Resources FAILED,2
+251,FAILED,14. check_14_FadeInAnimation -> FAILED -> java.lang.OutOfMemoryError: Java heap space,1
+251,FAILED,15. check_15_FadeOutAnimation -> FAILED -> java.lang.OutOfMemoryError: Java heap space,1
+262,FAILED,1. check_01_MainTitle -> FAILED -> org.junit.ComparisonFailure: View with id=mainTitleTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+262,FAILED,2. check_02_HomeTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=homeLabel should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+262,FAILED,3. check_03_AwayTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=awayLabel should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+262,FAILED,4. check_04_StartButton -> FAILED -> org.junit.ComparisonFailure: View with id=startBtn should be a AppCompatButton expected:<[AppCompat]Button> but was:<[Material]Button>,1
+263,FAILED,1. check_01_MainTitle -> FAILED -> org.junit.ComparisonFailure: View with id=playTitleTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+263,FAILED,2. check_02_HomeTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=homeTeam should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+263,FAILED,3. check_03_AwayTeamView -> FAILED -> org.junit.ComparisonFailure: View with id=awayTeam should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+263,FAILED,4. check_04_TimerShow -> FAILED -> org.junit.ComparisonFailure: View with id=timerShow should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+263,FAILED,5. check_05_PlayButton -> FAILED -> org.junit.ComparisonFailure: View with id=matchStartBtn should be a AppCompatButton expected:<[AppCompat]Button> but was:<[Material]Button>,1
+264,FAILED,1. check_01_Contents -> FAILED -> org.junit.ComparisonFailure: View with id=matchResultTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+266,FAILED,2. check_02_AddHomePlayer_ShowDialog -> FAILED -> org.junit.ComparisonFailure: View with id=message should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+266,FAILED,3. check_03_AddHomePlayer_CancelButton -> FAILED -> java.lang.AssertionError: Access to field 'homePlayer' must be Private Final expected:<18> but was:<2>,1
+266,FAILED,4. check_04_AddHomePlayer_OkButton -> FAILED -> java.lang.AssertionError: Access to field 'homePlayer' must be Private Final expected:<18> but was:<2>,1
+266,FAILED,5. check_05_AddAwayPlayer_ShowDialog -> FAILED -> org.junit.ComparisonFailure: View with id=message should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+266,FAILED,6. check_06_AddAwayPlayer_CancelButton -> FAILED -> java.lang.AssertionError: Access to field 'homePlayer' must be Private Final expected:<18> but was:<2>,1
+266,FAILED,7. check_07_AddAwayPlayer_OkButton -> FAILED -> java.lang.AssertionError: Access to field 'homePlayer' must be Private Final expected:<18> but was:<2>,1
+267,FAILED,1. check_01_Contents_onCreate -> FAILED -> org.junit.ComparisonFailure: Field 'timerTxt' should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+267,FAILED,5. check_05_StartMatch_Clicked -> FAILED -> org.junit.ComparisonFailure: View with id=matchStartBtn should be a AppCompatButton expected:<[AppCompat]Button> but was:<[Material]Button>,1
+267,FAILED,6. check_06_AddHomeGoal -> FAILED -> org.junit.ComparisonFailure: View with id=footerTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+267,FAILED,7. check_07_AddAwayGoal -> FAILED -> org.junit.ComparisonFailure: View with id=footerTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+267,FAILED,8. check_08_AddHomeYellowCard -> FAILED -> org.junit.ComparisonFailure: View with id=footerTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+267,FAILED,9. check_09_AddAwayYellowCard -> FAILED -> org.junit.ComparisonFailure: View with id=footerTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+267,FAILED,10. check_10_AddHomeRedCard -> FAILED -> org.junit.ComparisonFailure: View with id=footerTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+267,FAILED,11. check_11_AddAwayRedCard -> FAILED -> org.junit.ComparisonFailure: View with id=footerTxt should be a AppCompatTextView expected:<[AppCompat]TextView> but was:<[Material]TextView>,1
+267,FAILED,12. check_12_StopMatch_Clicked -> FAILED -> org.junit.ComparisonFailure: View with id=matchStartBtn should be a AppCompatButton expected:<[AppCompat]Button> but was:<[Material]Button>,1
+268,FAILED,1. check_01_Contents_onCreate -> FAILED -> org.junit.ComparisonFailure: Field 'restartBtn' should be a AppCompatButton expected:<[AppCompat]Button> but was:<[Material]Button>,1
+301,FAILED,10. check_10_Image_Resource -> FAILED -> java.lang.AssertionError: Image mylibrary.(png/jpg) is not exist in drawable resource . Actual: 0,1
+305,FAILED,2. check_02_Book_Class_Empty_Constructor -> FAILED -> org.aplas.mylibrary.TestC1Single > C1$050$check_02_Book_Class_Empty_Constructor FAILED,6
+315,FAILED,2. check_02_Book_Class_Empty_Constructor -> FAILED -> org.aplas.mylibrary.TestC1Single > C1$050$check_02_Book_Class_Empty_Constructor FAILED,1
+323,FAILED,3. check_03_Button_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$031$check_03_Button_Properties FAILED,5
+323,FAILED,1. check_01_Layout_Specification -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$031$check_01_Layout_Specification FAILED,5
+323,FAILED,2. check_02_TextView_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$031$check_02_TextView_Properties FAILED,1
+325,FAILED,1. check_01_StringArray_Resources -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$051$check_01_StringArray_Resources FAILED,1
+326,FAILED,1. check_01_EditText_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$052$check_01_EditText_Properties FAILED,6
+326,FAILED,3. check_03_TextView_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$052$check_03_TextView_Properties FAILED,1
+326,FAILED,4. check_04_EditText_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$052$check_04_EditText_Properties FAILED,1
+326,FAILED,2. check_02_Spinner_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$052$check_02_Spinner_Properties FAILED,1
+326,FAILED,5. check_05_Spinner_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$052$check_05_Spinner_Properties FAILED,1
+327,FAILED,2. check_02_Checkbox_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$061$check_02_Checkbox_Properties FAILED,4
+327,FAILED,3. check_03_Checkbox_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$061$check_03_Checkbox_Properties FAILED,3
+330,FAILED,1. check_01_ImageView_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$082$check_01_ImageView_Properties FAILED,10
+331,FAILED,1. check_01_Drawable_Resources -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$091$check_01_Drawable_Resources FAILED,1
+332,FAILED,2. check_02_TableRow_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$092$check_02_TableRow_Properties FAILED,8
+332,FAILED,3. check_03_TableRow_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$092$check_03_TableRow_Properties FAILED,5
+332,FAILED,4. check_04_TableRow_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$092$check_04_TableRow_Properties FAILED,5
+339,FAILED,2. check_02_Checkbox_Properties -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$061$check_02_Checkbox_Properties FAILED,1
+343,FAILED,1. check_01_Drawable_Resources -> FAILED -> org.aplas.basicappx.TestA1XSingle > A1X$091$check_01_Drawable_Resources FAILED,1
+357,FAILED,2. check_02_Methods -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$031$check_02_Methods FAILED,1
+358,FAILED,3. check_03_convertUnit -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$041$check_03_convertUnit FAILED,1
+362,FAILED,1. check_01_RadioGroupChange -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$062$check_01_RadioGroupChange FAILED,3
+365,FAILED,1. check_01_Image_Resources -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$091$check_01_Image_Resources FAILED,1
+366,FAILED,2. check_02_FormulaBox_Event -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$092$check_02_FormulaBox_Event FAILED,4
+366,FAILED,1. check_01_ImageView_Properties -> FAILED -> org.aplas.basicappx.TestB1XSingle > B1X$092$check_01_ImageView_Properties FAILED,4
+378,FAILED,4. checkMinimumSDK -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$011$checkMinimumSDK FAILED,1
+379,FAILED,2. checkProgressBar -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$021$checkProgressBar FAILED,8
+379,FAILED,4. checkRoundBtnDrawable -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$021$checkRoundBtnDrawable FAILED,1
+381,FAILED,5. check_3_1_colorBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_3_1_colorBox_Components FAILED,52
+381,FAILED,3. check_2_1_accessBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_2_1_accessBox_Components FAILED,46
+381,FAILED,7. check_4_1_buttonBox1_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_4_1_buttonBox1_Components FAILED,46
+381,FAILED,10. check_6_1_buttonBox2_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_6_1_buttonBox2_Components FAILED,46
+381,FAILED,14. check_8_1_progressBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_8_1_progressBox_Components FAILED,45
+381,FAILED,1. check_0_Layout_mainLayout -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_0_Layout_mainLayout FAILED,44
+381,FAILED,6. check_3_LinearLayout_colorBox -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_3_LinearLayout_colorBox FAILED,44
+381,FAILED,12. check_7_1_scoreBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_7_1_scoreBox_Components FAILED,44
+383,FAILED,2. check_02_Countdowntimer -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$051$check_02_Countdowntimer FAILED,8
+386,FAILED,3. check_03_Wrong_Answer -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$081$check_03_Wrong_Answer FAILED,13
+386,FAILED,4. check_04_No_Answer -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$081$check_04_No_Answer FAILED,13
+386,FAILED,1. check_01_Before_Game -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$081$check_01_Before_Game FAILED,8
+386,FAILED,2. check_02_Right_Answer -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$081$check_02_Right_Answer FAILED,8
+387,FAILED,4. checkMinimumSDK -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$011$checkMinimumSDK FAILED,1
+390,FAILED,1. check_0_Layout_mainLayout -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_0_Layout_mainLayout FAILED,3
+390,FAILED,3. check_2_1_accessBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_2_1_accessBox_Components FAILED,3
+390,FAILED,5. check_3_1_colorBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_3_1_colorBox_Components FAILED,3
+390,FAILED,6. check_3_LinearLayout_colorBox -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_3_LinearLayout_colorBox FAILED,3
+390,FAILED,7. check_4_1_buttonBox1_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_4_1_buttonBox1_Components FAILED,3
+390,FAILED,10. check_6_1_buttonBox2_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_6_1_buttonBox2_Components FAILED,3
+390,FAILED,12. check_7_1_scoreBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_7_1_scoreBox_Components FAILED,3
+390,FAILED,14. check_8_1_progressBox_Components -> FAILED -> org.aplas.colorgamex.TestB2XSingle > B2X$031$check_8_1_progressBox_Components FAILED,3
+396,FAILED,1. check_01_ProjectConfiguration -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$011$check_01_ProjectConfiguration FAILED,1
+397,FAILED,2. check_02_HomeTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_02_HomeTeamView FAILED,44
+397,FAILED,1. check_01_MainTitle -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_01_MainTitle FAILED,43
+397,FAILED,3. check_03_AwayTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_03_AwayTeamView FAILED,43
+397,FAILED,4. check_04_StartButton -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_04_StartButton FAILED,43
+398,FAILED,1. check_01_MainTitle -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_01_MainTitle FAILED,43
+398,FAILED,2. check_02_HomeTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_02_HomeTeamView FAILED,43
+398,FAILED,3. check_03_AwayTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_03_AwayTeamView FAILED,43
+398,FAILED,4. check_04_TimerShow -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_04_TimerShow FAILED,43
+398,FAILED,5. check_05_PlayButton -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_05_PlayButton FAILED,43
+399,FAILED,1. check_01_Contents -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$041$check_01_Contents FAILED,43
+401,FAILED,2. check_02_AddHomePlayer_ShowDialog -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$061$check_02_AddHomePlayer_ShowDialog FAILED,43
+401,FAILED,5. check_05_AddAwayPlayer_ShowDialog -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$061$check_05_AddAwayPlayer_ShowDialog FAILED,43
+402,FAILED,4. check_04_Fragment_Content -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_04_Fragment_Content FAILED,59
+402,FAILED,1. check_01_Contents_onCreate -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_01_Contents_onCreate FAILED,42
+402,FAILED,5. check_06_AddHomeGoal -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_06_AddHomeGoal FAILED,42
+402,FAILED,6. check_07_AddAwayGoal -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_07_AddAwayGoal FAILED,42
+402,FAILED,7. check_08_AddHomeYellowCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_08_AddHomeYellowCard FAILED,42
+402,FAILED,8. check_09_AddAwayYellowCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_09_AddAwayYellowCard FAILED,42
+402,FAILED,9. check_10_AddHomeRedCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_10_AddHomeRedCard FAILED,42
+402,FAILED,10. check_11_AddAwayRedCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_11_AddAwayRedCard FAILED,42
+402,FAILED,11. check_12_StopMatch_Clicked -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_12_StopMatch_Clicked FAILED,42
+402,FAILED,13. check_14_FinishBtn_Click -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_14_FinishBtn_Click FAILED,15
+403,FAILED,1. check_01_Contents_onCreate -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$081$check_01_Contents_onCreate FAILED,43
+403,FAILED,2. check_02_Header_Result -> FAILED -> java.lang.RuntimeException: Unable to resolve activity for Intent { cmp=org.aplas.soccermatch/.LogActivity (has extras) } [in 3500 ms],1
+403,FAILED,3. check_03_LogView_RecyclerView -> FAILED -> java.lang.RuntimeException: Unable to resolve activity for Intent { cmp=org.aplas.soccermatch/.LogActivity (has extras) } [in 3200 ms],1
+403,FAILED,4. check_04_RestartBtn_Click -> FAILED -> java.lang.RuntimeException: Unable to resolve activity for Intent { cmp=org.aplas.soccermatch/.LogActivity (has extras) } [in 3300 ms],1
+405,FAILED,1. check_01_MainTitle -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_01_MainTitle FAILED,3
+405,FAILED,2. check_02_HomeTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_02_HomeTeamView FAILED,3
+405,FAILED,3. check_03_AwayTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_03_AwayTeamView FAILED,3
+405,FAILED,4. check_04_StartButton -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$021$check_04_StartButton FAILED,3
+406,FAILED,1. check_01_MainTitle -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_01_MainTitle FAILED,3
+406,FAILED,2. check_02_HomeTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_02_HomeTeamView FAILED,3
+406,FAILED,3. check_03_AwayTeamView -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_03_AwayTeamView FAILED,3
+406,FAILED,4. check_04_TimerShow -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_04_TimerShow FAILED,3
+406,FAILED,5. check_05_PlayButton -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$031$check_05_PlayButton FAILED,3
+407,FAILED,1. check_01_Contents -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$041$check_01_Contents FAILED,3
+409,FAILED,2. check_02_AddHomePlayer_ShowDialog -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$061$check_02_AddHomePlayer_ShowDialog FAILED,3
+409,FAILED,5. check_05_AddAwayPlayer_ShowDialog -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$061$check_05_AddAwayPlayer_ShowDialog FAILED,2
+410,FAILED,4. check_04_Fragment_Content -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_04_Fragment_Content FAILED,3
+410,FAILED,1. check_01_Contents_onCreate -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_01_Contents_onCreate FAILED,2
+410,FAILED,5. check_06_AddHomeGoal -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_06_AddHomeGoal FAILED,2
+410,FAILED,6. check_07_AddAwayGoal -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_07_AddAwayGoal FAILED,2
+410,FAILED,7. check_08_AddHomeYellowCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_08_AddHomeYellowCard FAILED,2
+410,FAILED,8. check_09_AddAwayYellowCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_09_AddAwayYellowCard FAILED,2
+410,FAILED,9. check_10_AddHomeRedCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_10_AddHomeRedCard FAILED,2
+410,FAILED,10. check_11_AddAwayRedCard -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_11_AddAwayRedCard FAILED,2
+410,FAILED,11. check_12_StopMatch_Clicked -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$071$check_12_StopMatch_Clicked FAILED,2
+411,FAILED,1. check_01_Contents_onCreate -> FAILED -> org.aplas.soccermatch.TestB3Single > B3$081$check_01_Contents_onCreate FAILED,2

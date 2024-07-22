@@ -64,38 +64,49 @@ class Android extends Controller
         $topic = \App\Models\Topic::find($task->topic);
 
         $test_file = \App\Models\test_file::where('taskid', $id)->first();
-        /* dd($test_file); */
+        /* dd($test_file['id']); */
 
         $hasil = \App\Models\hasil2::where('testid', $test_file->id)->first();
+        /* dd($hasil); */
 
-        $report = $hasil->report;
+        /* if hasil null $report = "" */
+        /* $report = $hasil->report; */
+        if ($hasil) {
+            $report = $hasil->report;
+        } else {
+            $report = "";
+        }
 
         $task = \App\Models\Task::where('id', $test_file->taskid)->first();
         /* dd($task); */
 
         $taskdesc = $task->desc;
-
-        $flight = \App\Models\hasil2::where('id', $hasil->id)->first();
+        /* if $hasil null skip $flight*/
+        /* $flight = \App\Models\hasil2::where('id', $hasil->id)->first(); */
         /* dd($flight); */
+        if ($hasil) {
+            $flight = \App\Models\hasil2::where('id', $hasil->id)->first();
+        } else {
+            $flight = null;
+        }
 
-        /*  */
 
         if ($flight) {
             /* check if $flight->feedback not null */
             if (!isset($flight->feedback) || $flight->feedback == null || $flight->feedback == "") {
                 /* dd($flight->feedback); */
-            $content = <<<EOT
-            topik:
-            $taskdesc
+                $content = <<<EOT
+                topik:
+                $taskdesc
 
-            error:
-            $report
+                error:
+                $report
 
-            berikan solusi dari error yang diberikan dari topik tersebut dengan struktur
-            topik:
-            guide:
-            (ex. 1. hati-hati dengan error ini, solusinya adalah ...)(pastikan jumlah guide sama dengan error di atas)(jagnan sebutkan error di atas di dalam guide)
-            EOT;
+                berikan solusi dari error yang diberikan dari topik tersebut dengan struktur
+                topik:
+                guide:
+                (ex. 1. hati-hati dengan error ini, solusinya adalah ...)(pastikan jumlah guide sama dengan error di atas)(jagnan sebutkan error di atas di dalam guide)
+                EOT;
 
                 $response = $this->httpClient->post('chat/completions', [
                     'json' => [
@@ -116,6 +127,131 @@ class Android extends Controller
             }
         }
 
+        $student_evaluations = \App\Models\student_evaluation::where('testid', $test_file->id)->get();
+        /* dd($student_evaluations); */
+
+        if ($student_evaluations->isEmpty()) {
+            /* dd( "Data not found"); */
+        } else {
+            /* dd($student_evaluations); */
+            foreach ($student_evaluations as $item) {
+                /* dd($item->report); */
+                $flight = \App\Models\student_evaluation::where('id', $item->id)->first();
+                /* dd($flight->feedback); */
+                if ($flight->feedback == null) {
+                    /* dd($flight->feedback); */
+                    $content = <<<EOT
+                    berikan solusi untuk mencegah error berikut
+                    error:
+                    $item->report
+
+                    topik:
+                    $taskdesc
+
+                    struktur jawaban:
+                    topik: $taskdesc
+                    guide: (jelaskan dalam 1 kalimat saja contoh: hati-hati dengan error tersebut, solusinya adalah ...)
+
+                    EOT;
+
+                    $response = $this->httpClient->post('chat/completions', [
+                        'json' => [
+                            'model' => 'gpt-3.5-turbo',
+                            'messages' => [
+                                ['role' => 'system', 'content' => 'You are a helpful assistant.'],
+                                ['role' => 'user', 'content' => $content],
+                            ],
+                        ],
+                    ]);
+
+                    $feedback = json_decode($response->getBody(), true)['choices'][0]['message']['content'];
+
+                    /* dd($feedback); */
+
+                    $flight->feedback = $feedback;
+                    $flight->save();
+                }
+            }
+        }
+
+        $summary = \App\Models\summary::where('testid', $test_file->id)->first();
+
+        if ($summary) {
+            /* dd("Data found"); */
+        } else {
+            /* dd("Data not found"); */
+            /* dd($student_evaluations); */
+
+
+            /* create new summary */
+
+            /* foreach to process $student_evaluations->report save to $combinedreport*/
+            $combinedreport = "";
+
+            $student_evaluations_failed  = \App\Models\student_evaluation::where('testid', $test_file->id)->where('status', 'FAILED')->get();
+            /* dd($student_evaluations_failed); */
+
+            foreach ($student_evaluations_failed as $item) {
+                $combinedreport .= $item->report . "\n";
+            }
+
+            /* dd($combinedreport); */
+
+            /* sort $combinedreport */
+            $lines = explode("\n", $combinedreport);
+
+            // Filter dan urutkan baris yang dimulai dengan nomor urutan
+            usort($lines, function ($a, $b) {
+                // Ekstrak nomor urutan dari awal setiap baris
+                preg_match('/^(\d+)\./', trim($a), $aMatches);
+                preg_match('/^(\d+)\./', trim($b), $bMatches);
+
+                $aNumber = isset($aMatches[1]) ? (int) $aMatches[1] : PHP_INT_MAX;
+                $bNumber = isset($bMatches[1]) ? (int) $bMatches[1] : PHP_INT_MAX;
+
+                return $aNumber <=> $bNumber;
+            });
+
+            // Gabungkan array kembali menjadi string
+            $sortedReport = implode("\n", $lines);
+
+            /* dd($sortedReport); */
+
+            $content = <<<EOT
+            topik:
+            $taskdesc
+
+            error:
+            $combinedreport
+
+            berikan solusi dari error yang diberikan dari topik tersebut dengan struktur
+            topik:
+            guide:
+            (ex. 1. hati-hati dengan error ini, solusinya adalah ...)(pastikan jumlah guide sama dengan error di atas)(jagnan sebutkan error di atas di dalam guide)
+            EOT;
+
+            $response = $this->httpClient->post('chat/completions', [
+                'json' => [
+                    'model' => 'gpt-3.5-turbo',
+                    'messages' => [
+                        ['role' => 'system', 'content' => 'You are a helpful assistant.'],
+                        ['role' => 'user', 'content' => $content],
+                    ],
+                ],
+            ]);
+
+            $feedback = json_decode($response->getBody(), true)['choices'][0]['message']['content'];
+            /* dd($feedback); */
+
+            $summary = new \App\Models\summary();
+            $summary->testid = $test_file->id;
+            $summary->report = $sortedReport;
+            $summary->feedback = $feedback;
+
+            $summary->save();
+        }
+        /* dd($summary); */
+
         return view('pages.teacher.task_answer', [
             'title' => "Task Answer",
             'user' => $user,
@@ -123,6 +259,8 @@ class Android extends Controller
             'topic' => $topic,
             'test_file' => $test_file,
             'hasil' => $hasil,
+            'student_evaluations' => $student_evaluations,
+            'summary' => $summary,
         ]);
     }
 
@@ -193,14 +331,19 @@ class Android extends Controller
         $file = $request->file('json_file');
         $data = json_decode(file_get_contents($file), true);
 
+        // Kosongkan tabel student_evaluations
+        \App\Models\student_evaluation::truncate();
+
         foreach ($data as $item) {
-            \App\Models\Hasil2::create([
+            \App\Models\student_evaluation::create([
                 'testid' => $item['testid'],
-                'report' => $item['report']
+                'status' => $item['status'],
+                'report' => $item['report'],
+                'count' => $item['count']
             ]);
         }
 
-        return redirect()->route('upload.form')->with('success', 'File uploaded and data saved successfully.');
+        return redirect()->route('teacher.settings')->with('success', 'File uploaded and data saved successfully.');
     }
 
     /* student_learning */

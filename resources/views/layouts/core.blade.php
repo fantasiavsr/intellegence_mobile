@@ -73,6 +73,17 @@
         .form-container button {
             width: 48%;
         }
+
+        pre {
+            white-space: pre-wrap;
+            /* Mempertahankan spasi dan pemformatan baris */
+            overflow-x: auto;
+            /* Menambahkan scrolling horizontal jika konten terlalu lebar */
+            overflow-y: hidden;
+            /* Menyembunyikan scrolling vertikal (jika tidak diinginkan) */
+            max-width: 100%;
+            /* Batasi lebar maksimum elemen <pre> agar sesuai dengan layar */
+        }
     </style>
 </head>
 
